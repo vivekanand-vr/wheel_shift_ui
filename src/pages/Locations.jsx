@@ -1,78 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate.jsx';
-import { Plus, Search, Filter, RefreshCw, Warehouse, Car, Phone, MapPin } from 'lucide-react';
+import { Plus, Search, Filter, RefreshCw, Warehouse, Car, Phone, MapPin, Edit as EditIcon, Trash } from 'lucide-react';
+import axios from 'axios';
+import LocationModal from '../components/manageLocations/LocationModal.jsx';
 
 const Locations = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [storageLocations, setStorageLocations] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [currentLocation, setCurrentLocation] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    address: '',
+    contactPerson: '',
+    contactNumber: '',
+    totalCapacity: 0
+  });
   
-  // Sample storage locations data based on StorageLocation.java model
-  const storageLocations = [
-    { 
-      id: 1, 
-      name: 'Downtown Storage Facility',
-      address: '123 Main Street, Downtown, NY 10001',
-      contactPerson: 'Michael Brown',
-      contactNumber: '555-123-4567',
-      totalCapacity: 50,
-      currentVehicleCount: 32,
-      cars: [
-        { id: 2, make: 'Honda', model: 'Accord', year: 2021 },
-        { id: 4, make: 'Chevrolet', model: 'Equinox', year: 2023 },
-        // ...other cars
-      ]
-    },
-    { 
-      id: 2, 
-      name: 'Westside Garage',
-      address: '456 West Avenue, Westside, NY 10002',
-      contactPerson: 'Jennifer Lopez',
-      contactNumber: '555-234-5678',
-      totalCapacity: 30,
-      currentVehicleCount: 18,
-      cars: [
-        { id: 6, make: 'Mercedes-Benz', model: 'C-Class', year: 2022 },
-        // ...other cars
-      ]
-    },
-    { 
-      id: 3, 
-      name: 'Southside Warehouse',
-      address: '789 South Blvd, Southside, NY 10003',
-      contactPerson: 'Robert Johnson',
-      contactNumber: '555-345-6789',
-      totalCapacity: 80,
-      currentVehicleCount: 65,
-      cars: [
-        { id: 7, make: 'Audi', model: 'A4', year: 2021 },
-        { id: 8, make: 'Lexus', model: 'RX', year: 2022 },
-        // ...other cars
-      ]
-    },
-    { 
-      id: 4, 
-      name: 'East End Storage',
-      address: '101 East End Road, Eastside, NY 10004',
-      contactPerson: 'Sarah Williams',
-      contactNumber: '555-456-7890',
-      totalCapacity: 40,
-      currentVehicleCount: 22,
-      cars: [
-        // ...cars
-      ]
-    },
-    { 
-      id: 5, 
-      name: 'North County Parking',
-      address: '202 North County Road, Northside, NY 10005',
-      contactPerson: 'David Miller',
-      contactNumber: '555-567-8901',
-      totalCapacity: 60,
-      currentVehicleCount: 45,
-      cars: [
-        // ...cars
-      ]
-    },
-  ];
+  // Stats calculation
+  const totalCapacity = storageLocations.reduce((sum, location) => sum + location.totalCapacity, 0);
+  const totalVehicles = storageLocations.reduce((sum, location) => sum + location.currentVehicleCount, 0);
+  const availableSpace = totalCapacity - totalVehicles;
+
+  // Fetch locations data from API
+  const fetchLocations = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get('http://localhost:9000/api/v1/locations');
+      setStorageLocations(response.data);
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching locations:', err);
+      setError('Failed to load storage locations. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Initial data load
+  useEffect(() => {
+    fetchLocations();
+  }, []);
 
   // Filter storage locations based on search term
   const filteredLocations = storageLocations.filter(location => 
@@ -81,14 +51,9 @@ const Locations = () => {
     location.contactPerson.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Calculate storage stats
-  const totalCapacity = storageLocations.reduce((sum, location) => sum + location.totalCapacity, 0);
-  const totalVehicles = storageLocations.reduce((sum, location) => sum + location.currentVehicleCount, 0);
-  const availableSpace = totalCapacity - totalVehicles;
-
   // Function to calculate usage percentage
   const calculateUsagePercentage = (current, total) => {
-    return Math.round((current / total) * 100);
+    return Math.round((current / total) * 100) || 0;
   };
 
   // Function to get capacity status color
@@ -96,6 +61,39 @@ const Locations = () => {
     if (percentage < 60) return 'text-green-600';
     if (percentage < 85) return 'text-yellow-600';
     return 'text-red-600';
+  };
+
+  // Function to get progress bar color
+  const getProgressBarColor = (percentage) => {
+    if (percentage < 60) return 'bg-green-500';
+    if (percentage < 85) return 'bg-yellow-500';
+    return 'bg-red-500';
+  };
+
+   // Open modal for editing existing location
+   const handleEditLocation = (location) => {
+    setCurrentLocation(location);
+    setFormData({
+      name: location.name,
+      address: location.address,
+      contactPerson: location.contactPerson,
+      contactNumber: location.contactNumber,
+      totalCapacity: location.totalCapacity
+    });
+    setShowModal(true);
+  };
+
+  // Open modal for adding new location
+  const handleAddLocation = () => {
+    setCurrentLocation(null);
+    setFormData({
+      name: '',
+      address: '',
+      contactPerson: '',
+      contactNumber: '',
+      totalCapacity: 0
+    });
+    setShowModal(true);
   };
 
   return (
@@ -120,11 +118,17 @@ const Locations = () => {
             <Filter size={16} className="mr-2" />
             Filter
           </button>
-          <button className="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center">
+          <button 
+            className="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center"
+            onClick={fetchLocations}
+          >
             <RefreshCw size={16} className="mr-2" />
             Refresh
           </button>
-          <button className="px-4 py-2 bg-purple-600 rounded-md text-sm font-medium text-white hover:bg-purple-700 flex items-center">
+          <button 
+            className="px-4 py-2 bg-purple-600 rounded-md text-sm font-medium text-white hover:bg-purple-700 flex items-center"
+            onClick={handleAddLocation}
+          >
             <Plus size={16} className="mr-2" />
             Add Location
           </button>
@@ -168,79 +172,111 @@ const Locations = () => {
         </div>
       </div>
 
+      {/* Loading and Error States */}
+      {loading && (
+        <div className="text-center py-10 bg-white rounded-lg shadow">
+          <RefreshCw size={48} className="mx-auto text-gray-400 mb-4 animate-spin" />
+          <p className="text-gray-500">Loading storage locations...</p>
+        </div>
+      )}
+      
+      {error && !loading && (
+        <div className="text-center py-10 bg-white rounded-lg shadow border-l-4 border-red-500">
+          <p className="text-red-500">{error}</p>
+          <button 
+            onClick={fetchLocations}
+            className="mt-4 px-4 py-2 bg-blue-600 rounded-md text-sm font-medium text-white hover:bg-blue-700"
+          >
+            Try Again
+          </button>
+        </div>
+      )}
+
       {/* Storage Locations Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredLocations.map((location) => {
-          const usagePercentage = calculateUsagePercentage(location.currentVehicleCount, location.totalCapacity);
-          const statusColorClass = getCapacityStatusColor(usagePercentage);
-          
-          return (
-            <div key={location.id} className="bg-white rounded-lg shadow overflow-hidden hover:shadow-md transition-shadow">
-              <div className="p-6">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-lg font-semibold text-gray-900">{location.name}</h3>
-                  <div className={`text-sm font-bold ${statusColorClass}`}>
-                    {usagePercentage}% Full
-                  </div>
-                </div>
-                
-                <div className="mt-4">
-                  <div className="flex items-start mb-3">
-                    <MapPin size={18} className="text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-gray-600">{location.address}</p>
+      {!loading && !error && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredLocations.map((location) => {
+            const usagePercentage = calculateUsagePercentage(location.currentVehicleCount, location.totalCapacity);
+            const statusColorClass = getCapacityStatusColor(usagePercentage);
+            const progressBarColor = getProgressBarColor(usagePercentage);
+            
+            return (
+              <div key={location.id} className="bg-white rounded-lg shadow overflow-hidden hover:shadow-md transition-shadow">
+                <div className="p-6">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-lg font-semibold text-gray-900">{location.name}</h3>
+                    <div className={`text-sm font-bold ${statusColorClass}`}>
+                      {usagePercentage}% Full
+                    </div>
                   </div>
                   
-                  <div className="flex items-center mb-3">
-                    <Phone size={18} className="text-gray-400 mr-2 flex-shrink-0" />
-                    <p className="text-sm text-gray-600">
-                      {location.contactPerson} | {location.contactNumber}
-                    </p>
+                  <div className="mt-4">
+                    <div className="flex items-start mb-3">
+                      <MapPin size={18} className="text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-gray-600">{location.address}</p>
+                    </div>
+                    
+                    <div className="flex items-center mb-3">
+                      <Phone size={18} className="text-gray-400 mr-2 flex-shrink-0" />
+                      <p className="text-sm text-gray-600">
+                        {location.contactPerson} | {location.contactNumber}
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-center mb-4">
+                      <Car size={18} className="text-gray-400 mr-2 flex-shrink-0" />
+                      <p className="text-sm text-gray-600">
+                        {location.currentVehicleCount} / {location.totalCapacity} vehicles
+                      </p>
+                    </div>
                   </div>
                   
-                  <div className="flex items-center mb-4">
-                    <Car size={18} className="text-gray-400 mr-2 flex-shrink-0" />
-                    <p className="text-sm text-gray-600">
-                      {location.currentVehicleCount} / {location.totalCapacity} vehicles
-                    </p>
+                  {/* Progress bar */}
+                  <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+                    <div 
+                      className={`h-2.5 rounded-full ${progressBarColor}`} 
+                      style={{ width: `${usagePercentage}%` }}
+                    />
                   </div>
-                </div>
-                
-                {/* Progress bar */}
-                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                  <div 
-                    className={`h-2.5 rounded-full ${
-                      usagePercentage < 60 ? 'bg-green-500' : 
-                      usagePercentage < 85 ? 'bg-yellow-500' : 
-                      'bg-red-500'
-                    }`} 
-                    style={{ width: `${usagePercentage}%` }}
-                  />
-                </div>
-                
-                {/* Action buttons */}
-                <div className="flex justify-between mt-2">
-                  <button className="text-sm px-3 py-1 bg-purple-100 text-purple-700 rounded hover:bg-purple-200">
-                    View Details
-                  </button>
-                  <button className="text-sm px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200">
-                    Vehicle List
-                  </button>
-                  <button className="text-sm px-3 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">
-                    Edit
-                  </button>
+                  
+                  {/* Action buttons */}
+                  <div className="flex justify-between mt-2">
+                    <button className="text-sm px-3 py-1 bg-purple-100 text-purple-700 rounded hover:bg-purple-200">
+                      View Details
+                    </button>
+                    <button className="text-sm px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200">
+                      Vehicle List
+                    </button>
+                    <button 
+                      className="text-sm px-3 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200"
+                      onClick={() => handleEditLocation(location)}
+                    >
+                      Edit
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
       
-      {filteredLocations.length === 0 && (
+      {!loading && !error && filteredLocations.length === 0 && (
         <div className="text-center py-10 bg-white rounded-lg shadow">
           <Warehouse size={48} className="mx-auto text-gray-400 mb-4" />
           <p className="text-gray-500">No storage locations found matching your search criteria.</p>
         </div>
       )}
+
+      {/* Add/Edit Location Modal */}
+      <LocationModal isOpen={showModal}
+                     onClose={() => setShowModal(false)}
+                     currentLocation={currentLocation} 
+                     formData={formData} 
+                     setFormData={setFormData}
+                     refresh={fetchLocations} 
+      />
+    
     </PageTemplate>
   );
 };
