@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Step1 = ({ setFormData }) => {
+const CarModelForm = ({ setFormData }) => {
   const [makes, setMakes] = useState([]);
   const [models, setModels] = useState([]);
   const [variants, setVariants] = useState([]);
@@ -133,4 +133,4 @@ const Step1 = ({ setFormData }) => {
   );
 };
 
-export default Step1;
+export default CarModelForm;

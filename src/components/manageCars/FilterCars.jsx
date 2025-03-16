@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const FilterModal = ({ isOpen, onClose, onApplyFilters, initialFilters }) => {
+const FilterCars = ({ isOpen, onClose, onApplyFilters, initialFilters }) => {
   // State to hold filter values
   const [filters, setFilters] = useState({
     make: '',
@@ -362,4 +362,4 @@ const FilterModal = ({ isOpen, onClose, onApplyFilters, initialFilters }) => {
   );
 };
 
-export default FilterModal;
+export default FilterCars;

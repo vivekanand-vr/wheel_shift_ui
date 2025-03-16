@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
+import CarModelForm from './CarModelForm';
+import CarDetailsForm from './CarDetailsForm';
+import AdditionalDetailsForm from './AdditionalDetailsForm';
 
 const CarForm = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1);
@@ -100,9 +100,9 @@ const CarForm = ({ isOpen, onClose }) => {
           </div>
           
           <div>
-            {step === 1 && ( <Step1 setFormData={setFormData}/> )}
-            {step === 2 && ( <Step2 formData={formData} setFormData={setFormData} />)}
-            {step === 3 && ( <Step3 formData={formData} setFormData={setFormData} />)}
+            {step === 1 && ( <CarModelForm setFormData={setFormData}/> )}
+            {step === 2 && ( <CarDetailsForm formData={formData} setFormData={setFormData} />)}
+            {step === 3 && ( <AdditionalDetailsForm formData={formData} setFormData={setFormData} />)}
             
             <div className="mt-8 flex justify-between">
               {step > 1 && (

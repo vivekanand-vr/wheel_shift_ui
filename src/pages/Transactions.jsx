@@ -1,95 +1,140 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate.jsx';
+import TransactionModal from '../components/manageTransactions/TransactionModal.jsx';
 import { DollarSign, Plus, Search, Filter, RefreshCw, TrendingUp, TrendingDown, Receipt } from 'lucide-react';
 
 const FinancialTransactions = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [transactions, setTransactions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [stats, setStats] = useState({
+    totalPurchases: 0,
+    totalSales: 0,
+    totalExpenses: 0
+  });
   
-  // Sample financial transactions data based on FinancialTransaction.java model
-  const transactions = [
-    { 
-      id: 1, 
-      carId: 2, 
-      carDetails: { make: 'Honda', model: 'Accord', year: 2021, vin: 'JH2PC35G1MM200020' }, 
-      transactionType: 'Purchase',
-      amount: 21500.00,
-      transactionDate: '2025-03-05',
-      description: 'Initial purchase of vehicle from auction',
-      vendorName: 'City Auto Auction',
-      receiptUrl: '/receipts/purchase-21500-20250305.pdf',
-      createdAt: '2025-03-05T10:30:00'
-    },
-    { 
-      id: 2, 
-      carId: 2, 
-      carDetails: { make: 'Honda', model: 'Accord', year: 2021, vin: 'JH2PC35G1MM200020' }, 
-      transactionType: 'Repair',
-      amount: 850.00,
-      transactionDate: '2025-03-07',
-      description: 'Brake system repair and fluid replacement',
-      vendorName: 'QuickFix Auto Service',
-      receiptUrl: '/receipts/repair-850-20250307.pdf',
-      createdAt: '2025-03-07T15:45:00'
-    },
-    { 
-      id: 3, 
-      carId: 4, 
-      carDetails: { make: 'Chevrolet', model: 'Equinox', year: 2023, vin: '2GNFLFEK8D6417982' }, 
-      transactionType: 'Purchase',
-      amount: 28750.00,
-      transactionDate: '2025-03-10',
-      description: 'Vehicle purchase from trade-in',
-      vendorName: 'DirectSale Motors',
-      receiptUrl: '/receipts/purchase-28750-20250310.pdf',
-      createdAt: '2025-03-10T09:15:00'
-    },
-    { 
-      id: 4, 
-      carId: 4, 
-      carDetails: { make: 'Chevrolet', model: 'Equinox', year: 2023, vin: '2GNFLFEK8D6417982' }, 
-      transactionType: 'Detailing',
-      amount: 350.00,
-      transactionDate: '2025-03-11',
-      description: 'Full interior and exterior detailing',
-      vendorName: 'Premium Auto Detailing',
-      receiptUrl: '/receipts/detail-350-20250311.pdf',
-      createdAt: '2025-03-11T13:20:00'
-    },
-    { 
-      id: 5, 
-      carId: 6, 
-      carDetails: { make: 'Mercedes-Benz', model: 'C-Class', year: 2022, vin: 'WDDWF4KB2GR157998' }, 
-      transactionType: 'Sale',
-      amount: 39500.00,
-      transactionDate: '2025-03-12',
-      description: 'Vehicle sale to customer Kevin Mitchell',
-      vendorName: null,
-      receiptUrl: '/receipts/sale-39500-20250312.pdf',
-      createdAt: '2025-03-12T17:30:00'
-    },
-  ];
+  // Pagination state
+  const [pagination, setPagination] = useState({
+    page: 0,
+    size: 10,
+    totalElements: 0,
+    totalPages: 0
+  });
+  
+  // Modal state
+  const [modalOpen, setModalOpen] = useState(false);
+  const [editingTransaction, setEditingTransaction] = useState(null);
 
-  // Filter transactions based on search term
-  const filteredTransactions = transactions.filter(transaction => 
-    transaction.carDetails.make.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    transaction.carDetails.model.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    transaction.transactionType.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    (transaction.vendorName && transaction.vendorName.toLowerCase().includes(searchTerm.toLowerCase())) ||
-    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Fetch transactions with pagination
+  const fetchTransactions = async (page = 0, size = 10) => {
+    setLoading(true);
+    try {
+      const response = await fetch(`http://localhost:9000/api/v1/transactions/paged?page=${page}&size=${size}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch transactions');
+      }
+      const data = await response.json();
+      setTransactions(data.content);
+      setPagination({
+        page: data.pageable.pageNumber,
+        size: data.pageable.pageSize,
+        totalElements: data.totalElements,
+        totalPages: data.totalPages
+      });
+      setLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setLoading(false);
+    }
+  };
 
-  // Calculate transaction stats
-  const totalPurchases = transactions
-    .filter(t => t.transactionType === 'Purchase')
-    .reduce((sum, t) => sum + t.amount, 0);
-  
-  const totalSales = transactions
-    .filter(t => t.transactionType === 'Sale')
-    .reduce((sum, t) => sum + t.amount, 0);
-  
-  const totalExpenses = transactions
-    .filter(t => t.transactionType !== 'Purchase' && t.transactionType !== 'Sale')
-    .reduce((sum, t) => sum + t.amount, 0);
+  // Fetch transaction statistics
+  const fetchTransactionStats = async () => {
+    try {
+      const response = await fetch('http://localhost:9000/api/v1/transactions/statistics');
+      if (!response.ok) {
+        throw new Error('Failed to fetch transaction statistics');
+      }
+      const data = await response.json();
+      setStats({
+        totalPurchases: data.totalPurchases || 0,
+        totalSales: data.totalSales || 0,
+        totalExpenses: data.totalExpenses || 0
+      });
+    } catch (err) {
+      console.error('Error fetching transaction statistics:', err);
+    }
+  };
+
+  // Initial data fetch
+  useEffect(() => {
+    fetchTransactions();
+    fetchTransactionStats();
+  }, []);
+
+  // Fetch when search term changes (with debounce)
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      fetchTransactions(0, pagination.size);
+    }, 500);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchTerm]);
+
+  // Handle refresh
+  const handleRefresh = () => {
+    fetchTransactions(pagination.page, pagination.size);
+    fetchTransactionStats();
+  };
+
+  // Handle pagination
+  const handlePageChange = (newPage) => {
+    fetchTransactions(newPage, pagination.size);
+  };
+
+  // Open modal for adding a transaction
+  const handleAddTransaction = () => {
+    setEditingTransaction(null);
+    setModalOpen(true);
+  };
+
+  // Open modal for editing a transaction
+  const handleEditTransaction = (transaction) => {
+    setEditingTransaction(transaction);
+    setModalOpen(true);
+  };
+
+  // Handle transaction save (create or update)
+  const handleSaveTransaction = async (transactionData) => {
+    try {
+      const url = transactionData.id 
+        ? `/api/transactions/${transactionData.id}` 
+        : '/api/transactions';
+      
+      const method = transactionData.id ? 'PUT' : 'POST';
+      
+      const response = await fetch(url, {
+        method,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(transactionData)
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to save transaction');
+      }
+      
+      setModalOpen(false);
+      handleRefresh();
+    } catch (err) {
+      console.error('Error saving transaction:', err);
+      // You could set an error state here to display in the UI
+    }
+  };
 
   // Function to format amount
   const formatAmount = (amount) => {
@@ -154,11 +199,17 @@ const FinancialTransactions = () => {
             <Filter size={16} className="mr-2" />
             Filter
           </button>
-          <button className="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center">
+          <button 
+            className="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center"
+            onClick={handleRefresh}
+          >
             <RefreshCw size={16} className="mr-2" />
             Refresh
           </button>
-          <button className="px-4 py-2 bg-purple-600 rounded-md text-sm font-medium text-white hover:bg-purple-700 flex items-center">
+          <button 
+            className="px-4 py-2 bg-purple-600 rounded-md text-sm font-medium text-white hover:bg-purple-700 flex items-center"
+            onClick={handleAddTransaction}
+          >
             <Plus size={16} className="mr-2" />
             Add Transaction
           </button>
@@ -174,7 +225,7 @@ const FinancialTransactions = () => {
             </div>
             <div>
               <p className="text-sm text-gray-500">Total Purchases</p>
-              <p className="text-2xl font-bold">{formatAmount(totalPurchases)}</p>
+              <p className="text-2xl font-bold">{formatAmount(stats.totalPurchases)}</p>
             </div>
           </div>
         </div>
@@ -185,7 +236,7 @@ const FinancialTransactions = () => {
             </div>
             <div>
               <p className="text-sm text-gray-500">Total Sales</p>
-              <p className="text-2xl font-bold">{formatAmount(totalSales)}</p>
+              <p className="text-2xl font-bold">{formatAmount(stats.totalSales)}</p>
             </div>
           </div>
         </div>
@@ -196,7 +247,7 @@ const FinancialTransactions = () => {
             </div>
             <div>
               <p className="text-sm text-gray-500">Total Expenses</p>
-              <p className="text-2xl font-bold">{formatAmount(totalExpenses)}</p>
+              <p className="text-2xl font-bold">{formatAmount(stats.totalExpenses)}</p>
             </div>
           </div>
         </div>
@@ -204,82 +255,173 @@ const FinancialTransactions = () => {
 
       {/* Transactions Table */}
       <div className="bg-white shadow rounded-lg overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Vehicle
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Transaction Type
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Transaction Date
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Amount
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Vendor/Description
-                </th>
-                <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {filteredTransactions.map((transaction) => (
-                <tr key={transaction.id} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center">
-                      <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
-                        <DollarSign size={20} className="text-purple-500" />
-                      </div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">{transaction.carDetails.make} {transaction.carDetails.model}</div>
-                        <div className="text-sm text-gray-500">{transaction.carDetails.year} | {transaction.carDetails.vin}</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getTransactionTypeStyle(transaction.transactionType)}`}>
-                      {transaction.transactionType}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {formatDate(transaction.transactionDate)}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className={`text-sm font-semibold ${getAmountStyle(transaction.transactionType)}`}>
-                      {formatAmount(transaction.amount)}
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="text-sm text-gray-900">{transaction.vendorName || 'N/A'}</div>
-                    <div className="text-sm text-gray-500 truncate max-w-xs">{transaction.description}</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <button className="text-purple-600 hover:text-purple-900 mr-3">Edit</button>
-                    <button className="text-blue-600 hover:text-blue-900 mr-3">View</button>
-                    {transaction.receiptUrl && (
-                      <button className="text-green-600 hover:text-green-900 items-center inline-flex">
-                        <Receipt size={16} className="mr-1" />
-                        Receipt
-                      </button>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        {filteredTransactions.length === 0 && (
+        {loading ? (
           <div className="text-center py-10">
-            <p className="text-gray-500">No transactions found matching your search criteria.</p>
+            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-purple-600 mx-auto"></div>
+            <p className="mt-4 text-gray-500">Loading transactions...</p>
           </div>
+        ) : error ? (
+          <div className="text-center py-10">
+            <p className="text-red-500">{error}</p>
+            <button 
+              className="mt-4 px-4 py-2 bg-purple-600 rounded-md text-sm font-medium text-white hover:bg-purple-700"
+              onClick={handleRefresh}
+            >
+              Try Again
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Vehicle
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Transaction Type
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Transaction Date
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Amount
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Vendor/Description
+                    </th>
+                    <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {transactions.map((transaction) => (
+                    <tr key={transaction.id} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex items-center">
+                          <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
+                            <DollarSign size={20} className="text-purple-500" />
+                          </div>
+                          <div className="ml-4">
+                            <div className="text-sm font-medium text-gray-900">
+                              {transaction.carDetails?.make} {transaction.carDetails?.model}
+                            </div>
+                            <div className="text-sm text-gray-500">
+                              {transaction.carDetails?.year} | {transaction.carDetails?.vin}
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getTransactionTypeStyle(transaction.transactionType)}`}>
+                          {transaction.transactionType}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {formatDate(transaction.transactionDate)}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className={`text-sm font-semibold ${getAmountStyle(transaction.transactionType)}`}>
+                          {formatAmount(transaction.amount)}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="text-sm text-gray-900">{transaction.vendorName || 'N/A'}</div>
+                        <div className="text-sm text-gray-500 truncate max-w-xs">{transaction.description}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <button 
+                          className="text-purple-600 hover:text-purple-900 mr-3"
+                          onClick={() => handleEditTransaction(transaction)}
+                        >
+                          Edit
+                        </button>
+                        <button className="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                        {transaction.receiptUrl && (
+                          <button className="text-green-600 hover:text-green-900 items-center inline-flex">
+                            <Receipt size={16} className="mr-1" />
+                            Receipt
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            
+            {transactions.length === 0 && (
+              <div className="text-center py-10">
+                <p className="text-gray-500">No transactions found matching your search criteria.</p>
+              </div>
+            )}
+            
+            {/* Pagination */}
+            {pagination.totalPages > 1 && (
+              <div className="px-6 py-4 flex items-center justify-between border-t border-gray-200">
+                <div>
+                  <p className="text-sm text-gray-700">
+                    Showing <span className="font-medium">{pagination.page * pagination.size + 1}</span> to{' '}
+                    <span className="font-medium">
+                      {Math.min((pagination.page + 1) * pagination.size, pagination.totalElements)}
+                    </span>{' '}
+                    of <span className="font-medium">{pagination.totalElements}</span> results
+                  </p>
+                </div>
+                <div className="flex space-x-2">
+                  <button
+                    onClick={() => handlePageChange(pagination.page - 1)}
+                    disabled={pagination.page === 0}
+                    className={`px-3 py-1 border rounded-md ${
+                      pagination.page === 0
+                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    Previous
+                  </button>
+                  {[...Array(pagination.totalPages).keys()].map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`px-3 py-1 border rounded-md ${
+                        pagination.page === page
+                          ? 'bg-purple-600 text-white'
+                          : 'bg-white text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      {page + 1}
+                    </button>
+                  ))}
+                  <button
+                    onClick={() => handlePageChange(pagination.page + 1)}
+                    disabled={pagination.page === pagination.totalPages - 1}
+                    className={`px-3 py-1 border rounded-md ${
+                      pagination.page === pagination.totalPages - 1
+                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
+      
+      {/* Transaction Modal */}
+      {modalOpen && (
+        <TransactionModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          transaction={editingTransaction}
+          onSave={handleSaveTransaction}
+        />
+      )}
     </PageTemplate>
   );
 };

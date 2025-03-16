@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const Step3 = ({ formData, setFormData }) => {
+const AdditionalDetailsForm = ({ formData, setFormData }) => {
 
   const [additionalFeatures, setAdditionalFeatures] = useState([
       { key: "Sunroof", value: "No" },
@@ -173,4 +173,4 @@ const Step3 = ({ formData, setFormData }) => {
   )
 }
 
-export default Step3
+export default AdditionalDetailsForm

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate.jsx';
-import FilterModal from '../components/FilterModal.jsx';
+import FilterModal from '../components/manageCars/FilterCars.jsx';
 import { Car, Plus, Search, Filter, RefreshCw } from 'lucide-react';
 import axios from 'axios';
-import CarForm from '../components/carForm/CarForm.jsx';
+import CarForm from '../components/manageCars/CarForm.jsx';
 
 const Inventory = () => {
   const [searchTerm, setSearchTerm] = useState('');
