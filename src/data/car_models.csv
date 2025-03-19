@@ -1,0 +1,1001 @@
+Id,Make,Model,Variant,Emission_Norm,Fuel_Tank_Capacity,Fuel_Type,Body_Type,Gears,Type
+0,C,Nano Genx,Xt,BS IV,24 litres,Petrol,Hatchback,4,Manual
+1,Tata,Nano Genx,Xe,BS IV,24 litres,Petrol,Hatchback,4,Manual
+2,Tata,Nano Genx,Emax Xm,BS IV,15 litres,CNG,Hatchback,4,Manual
+3,Tata,Nano Genx,Xta,BS IV,24 litres,Petrol,Hatchback,5,Automatic
+4,Tata,Nano Genx,Xm,BS IV,24 litres,Petrol,Hatchback,4,Manual
+5,Tata,Nano Genx,Xma,BS IV,24 litres,Petrol,Hatchback,5,Automatic
+6,Datsun,Redi-Go,D,BS IV,28 litres,Petrol,Hatchback,5,Manual
+7,Datsun,Redi-Go,T,BS IV,28 litres,Petrol,Hatchback,5,Manual
+8,Datsun,Redi-Go,A,BS IV,28 litres,Petrol,Hatchback,5,Manual
+9,Datsun,Redi-Go,S,BS IV,28 litres,Petrol,Hatchback,5,Manual
+10,Datsun,Redi-Go,1.0 S,BS IV,28 litres,Petrol,Hatchback,5,Manual
+11,Datsun,Redi-Go,1.0 S Amt,BS IV,28 litres,Petrol,Hatchback,5,Automatic
+12,Renault,Kwid,Rxe 0.8,BS 6,28 litres,Petrol,Hatchback,6,Manual
+13,Renault,Kwid,Std 0.8,BS 6,28 litres,Petrol,Hatchback,5,Manual
+14,Renault,Kwid,Rxl 0.8,BS 6,28 litres,Petrol,Hatchback,5,Manual
+15,Renault,Kwid,Rxt 0.8,BS 6,28 litres,Petrol,Hatchback,5,Manual
+16,Renault,Kwid,Rxt 1.0,BS 6,28 litres,Petrol,Hatchback,5,Manual
+17,Renault,Kwid,Climber 1.0 Mt,BS 6,28 litres,Petrol,Hatchback,5,Manual
+20,Renault,Kwid,Rxt (O) 1.0,BS 6,28 litres,Petrol,Hatchback,5,Manual
+21,Renault,Kwid,Rxt (O) Amt 1.0,BS 6,28 litres,Petrol,Hatchback,5,Automatic
+22,Renault,Kwid,Climber (O) Mt 1.0,BS 6,28 litres,Petrol,Hatchback,5,Manual
+24,Maruti Suzuki,Eeco,5 Str,BS 6,40 litres,Petrol,MPV,5,Manual
+25,Maruti Suzuki,Eeco,7 Str,BS 6,40 litres,Petrol,MPV,5,Manual
+26,Maruti Suzuki,Eeco,5 Str With Ac+Htr,BS 6,40 litres,Petrol,MPV,5,Manual
+27,Maruti Suzuki,Eeco,5 Str With Ac+Htr Cng,BS 6,40 litres,CNG,MPV,5,Manual
+28,Maruti Suzuki,Eeco,5 Str With Htr Cng,BS 6,40 litres,CNG,MPV,5,Manual
+29,Maruti Suzuki,Alto K10,Lxi,BS IV,35 litres,Petrol,Hatchback,5,Manual
+30,Maruti Suzuki,Alto K10,Vxi,BS IV,35 litres,Petrol,Hatchback,5,Manual
+31,Maruti Suzuki,Alto K10,Lx,BS IV,35 litres,Petrol,Hatchback,5,Manual
+32,Maruti Suzuki,Alto K10,Vxi (O),BS IV,35 litres,Petrol,Hatchback,5,Manual
+33,Maruti Suzuki,Alto K10,Lxi Cng (O),BS IV,35 litres,CNG,Hatchback,5,Manual
+34,Maruti Suzuki,Alto K10,Vxi Amt (O),BS IV,35 litres,Petrol,Hatchback,5,Automatic
+35,Datsun,Go,D,BS IV,35 litres,Petrol,Hatchback,5,Manual
+36,Datsun,Go,T,BS IV,35 litres,Petrol,Hatchback,5,Manual
+37,Datsun,Go,T (O),BS IV,35 litres,Petrol,Hatchback,5,Manual
+38,Datsun,Go,A (O),BS IV,35 litres,Petrol,Hatchback,5,Manual
+39,Datsun,Go,A,BS IV,35 litres,Petrol,Hatchback,5,Manual
+40,Datsun,Go,T Vdc,BS IV,35 litres,Petrol,Hatchback,5,Manual
+41,Datsun,Go,T (O) Vdc,BS IV,35 litres,Petrol,Hatchback,5,Manual
+42,Datsun,Go,T Cvt,BS IV,35 litres,Petrol,Hatchback,5,Manual
+43,Datsun,Go,T (O) Cvt,BS IV,35 litres,Petrol,Hatchback,5,Manual
+44,Maruti Suzuki,Celerio Tour,H2,BS IV,35 litres,Petrol,Hatchback,5,Manual
+45,Maruti Suzuki,Celerio Tour,H2 Cng,BS IV,60 litres,CNG,Hatchback,5,Manual
+46,Hyundai,Santro,Era Mt,BS IV,35 litres,Petrol,Hatchback,5,Manual
+47,Hyundai,Santro,Magna Mt,BS IV,35 litres,Petrol,Hatchback,5,Manual
+48,Hyundai,Santro,Magna Mt Cng,BS IV,35 litres,CNG,Hatchback,5,Manual
+49,Hyundai,Santro,Magna Amt,BS IV,35 litres,Petrol,Hatchback,5,AMT
+50,Hyundai,Santro,Sportz Mt,BS IV,35 litres,Petrol,Hatchback,5,Manual
+51,Hyundai,Santro,Sportz Mt Cng,BS IV,60 litres,CNG,Hatchback,5,Manual
+52,Hyundai,Santro,Sportz Amt,BS IV,35 litres,Petrol,Hatchback,5,AMT
+53,Hyundai,Santro,Asta Mt,BS IV,35 litres,Petrol,Hatchback,5,Manual
+54,Tata,Tiago,Revotron Xe,BS 6,35 litres,Petrol,Hatchback,5,Manual
+55,Tata,Tiago,Revotron Xt,BS 6,35 litres,Petrol,Hatchback,5,Manual
+56,Tata,Tiago,Revotron Xz,BS 6,35 litres,Petrol,Hatchback,5,Manual
+57,Tata,Tiago,Revotron Xz Plus,BS 6,35 litres,Petrol,Hatchback,5,Manual
+58,Tata,Tiago,Revotron Xz Plus Dual Tone,BS 6,35 litres,Petrol,Hatchback,5,Manual
+59,Tata,Tiago,Revotron Xza,BS 6,35 litres,Petrol,Hatchback,5,AMT
+60,Tata,Tiago,Revotron Xza Plus,BS 6,35 litres,Petrol,Hatchback,5,AMT
+61,Tata,Tiago,Revotron Xza Plus Dual Tone,BS 6,35 litres,Petrol,Hatchback,5,AMT
+62,Maruti Suzuki,Celerio X,Vxi (O),BS IV,35 litres,Petrol,Hatchback,5,Manual
+63,Maruti Suzuki,Celerio X,Vxi,BS IV,35 litres,Petrol,Hatchback,5,Manual
+64,Maruti Suzuki,Celerio X,Vxi Amt,BS IV,35 litres,Petrol,Hatchback,5,Automatic
+65,Maruti Suzuki,Celerio X,Vxi Amt (O),BS IV,35 litres,Petrol,Hatchback,5,Automatic
+66,Maruti Suzuki,Celerio X,Zxi,BS IV,35 litres,Petrol,Hatchback,5,Manual
+67,Maruti Suzuki,Celerio X,Zxi (O),BS IV,35 litres,Petrol,Hatchback,5,Manual
+68,Maruti Suzuki,Celerio X,Zxi Amt,BS IV,35 litres,Petrol,Hatchback,5,Automatic
+69,Maruti Suzuki,Celerio X,Zxi Amt (O),BS IV,35 litres,Petrol,Hatchback,5,Automatic
+72,Maruti Suzuki,Ignis,Delta 1.2 Amt,BS IV,32 litres,Petrol,Hatchback,5,AMT
+73,Maruti Suzuki,Ignis,Delta 1.2 Mt,BS IV,32 litres,Petrol,Hatchback,5,Manual
+77,Renault,Triber,Rxe,BS 6,40 litres,Petrol,MUV,5,Manual
+78,Renault,Triber,Rxl,BS 6,40 litres,Petrol,MUV,5,Manual
+79,Renault,Triber,Rxt,BS 6,40 litres,Petrol,MUV,5,Manual
+80,Renault,Triber,Rxz,BS 6,40 litres,Petrol,MUV,5,Manual
+81,Premier,Rio,Gx,BS IV,46 litres,Petrol,SUV,5,Manual
+82,Premier,Rio,Ex,BS IV,46 litres,Diesel,SUV,5,Manual
+83,Premier,Rio,Glx,BS IV,46 litres,Petrol,SUV,5,Manual
+84,Premier,Rio,Dx,BS IV,46 litres,Diesel,SUV,5,Manual
+85,Premier,Rio,Lx,BS IV,46 litres,Diesel,SUV,5,Manual
+86,Premier,Rio,Crdi4,BS IV,46 litres,Diesel,SUV,5,Manual
+87,Toyota,Etios Liva,G,BS IV,45 litres,Petrol,Hatchback,5,Manual
+88,Toyota,Etios Liva,V,BS IV,45 litres,Petrol,Hatchback,5,Manual
+89,Toyota,Etios Liva,Gd,BS IV,45 litres,Diesel,Hatchback,5,Manual
+90,Toyota,Etios Liva,Vx,BS IV,45 litres,Petrol,Hatchback,5,Manual
+91,Toyota,Etios Liva,Vxd,BS IV,45 litres,Diesel,Hatchback,5,Manual
+92,Toyota,Etios Liva,Vd,BS IV,45 litres,Diesel,Hatchback,5,Manual
+93,Toyota,Etios Liva,Dual Tone V,BS IV,45 litres,Petrol,Hatchback,5,Manual
+94,Toyota,Etios Liva,Dual Tone Vd,BS IV,45 litres,Diesel,Hatchback,5,Manual
+95,Toyota,Etios Liva,Dual Tone Vx,BS IV,45 litres,Petrol,Hatchback,5,Manual
+96,Toyota,Etios Liva,Dual Tone Vxd,BS IV,45 litres,Diesel,Hatchback,5,Manual
+97,Toyota,Etios Liva,Gx,BS IV,45 litres,Petrol,Hatchback,5,Manual
+98,Toyota,Etios Liva,Gxd,BS IV,45 litres,Diesel,Hatchback,5,Manual
+99,Toyota,Etios Liva,Vx Dual Tone Limited Edition,BS IV,45 litres,Petrol,Hatchback,5,Manual
+100,Toyota,Etios Liva,Vxd Dual Tone Limited Edition,BS IV,45 litres,Diesel,Hatchback,5,Manual
+101,Nissan,Micra Active,Xl,BS IV,41 litres,Petrol,Hatchback,5,Manual
+102,Nissan,Micra Active,Xv,BS IV,41 litres,Petrol,Hatchback,5,Manual
+103,Nissan,Micra Active,Xl (O),BS IV,41 litres,Petrol,Hatchback,5,Manual
+104,Tata,Bolt,Xt Diesel,BS IV,44 litres,Diesel,Hatchback,5,Manual
+105,Tata,Bolt,Xe Diesel,BS IV,44 litres,Diesel,Hatchback,5,Manual
+106,Tata,Bolt,Xm Diesel,BS IV,44 litres,Diesel,Hatchback,5,Manual
+107,Tata,Bolt,Xms Diesel,BS IV,44 litres,Diesel,Hatchback,5,Manual
+108,Tata,Bolt,Xt Petrol,BS IV,44 litres,Petrol,Hatchback,5,Manual
+109,Tata,Bolt,Xe Petrol,BS IV,44 litres,Petrol,Hatchback,5,Manual
+110,Tata,Bolt,Xm Petrol,BS IV,44 litres,Petrol,Hatchback,5,Manual
+111,Tata,Bolt,Xms Petrol,BS IV,44 litres,Petrol,Hatchback,5,Manual
+112,Hyundai,Xcent Prime,Cng T + (Cng +,BS IV,43 litres,CNG + Petrol,Sedan,5,Manual
+113,Hyundai,Xcent Prime,T,BS IV,43 litres,Petrol,Sedan,5,Manual
+114,Hyundai,Xcent Prime,T+,BS IV,43 litres,Petrol,Sedan,5,Manual
+115,Hyundai,Xcent Prime,Cng T (Cng +,BS IV,43 litres,CNG + Petrol,Sedan,5,Manual
+116,Hyundai,Xcent Prime,T+ Crdi,BS IV,43 litres,Diesel,Sedan,5,Manual
+117,Hyundai,Xcent Prime,T Crdi,BS IV,43 litres,Diesel,Sedan,5,Manual
+119,Maruti Suzuki,Dzire Tour,Lxi,BS IV,42 litres,Petrol,Sedan,5,Manual
+120,Maruti Suzuki,Dzire Tour,Lxi Cng,BS IV,42 litres,CNG,Sedan,5,Manual
+121,Hyundai,Elite I20,Era 1.2,BS IV,45 litres,Petrol,Hatchback,5,Manual
+122,Hyundai,Elite I20,Era 1.4 Crdi,BS IV,45 litres,Diesel,Hatchback,6,Manual
+123,Hyundai,Elite I20,Magna Plus,BS IV,45 litres,Petrol,Hatchback,5,Manual
+124,Hyundai,Elite I20,Magna Plus Crdi,BS IV,45 litres,Diesel,Hatchback,6,Manual
+125,Hyundai,Elite I20,Sportz Plus,BS IV,45 litres,Petrol,Hatchback,5,Manual
+126,Hyundai,Elite I20,Sportz Plus Crdi Dual Tone,BS IV,45 litres,Diesel,Hatchback,6,Manual
+127,Hyundai,Elite I20,Asta (O) 1.2,BS IV,45 litres,Petrol,Hatchback,5,Manual
+128,Hyundai,Elite I20,Asta (O) Crdi,BS IV,45 litres,Diesel,Hatchback,6,Manual
+129,Hyundai,Elite I20,Asta (O) Cvt,BS IV,45 litres,Petrol,Hatchback,5,Automatic
+130,Hyundai,Elite I20,Sportz Plus Dual Tone,BS IV,45 litres,Petrol,Hatchback,5,Manual
+131,Hyundai,Elite I20,Sportz Plus Cvt,BS IV,45 litres,Petrol,Hatchback,5,Manual
+132,Hyundai,Elite I20,Sportz Plus Crdi,BS IV,45 litres,Diesel,Hatchback,6,Manual
+133,Hyundai,Aura,E 1.2 Petrol,BS 6,37 litres,Petrol,Sedan,5,Manual
+134,Hyundai,Aura,S 1.2 Petrol,BS 6,37 litres,Petrol,Sedan,5,Manual
+135,Hyundai,Aura,S 1.2 Amt Petrol,BS 6,37 litres,Petrol,Sedan,5,Automatic
+136,Hyundai,Aura,Sx 1.2 Petrol,BS 6,37 litres,Petrol,Sedan,5,Manual
+137,Hyundai,Aura,Sx Plus 1.2 Amt Petrol,BS 6,37 litres,Petrol,Sedan,5,Automatic
+138,Hyundai,Aura,Sx (O) 1.2 Petrol,BS 6,37 litres,Petrol,Sedan,5,Manual
+139,Hyundai,Aura,S 1.2 Cng Petrol (Cng +,BS 6,37 litres,CNG + Petrol,Sedan,5,Manual
+140,Hyundai,Aura,Sx Plus 1.0 Petrol,BS 6,37 litres,Petrol,Sedan,5,Manual
+141,Hyundai,Aura,S 1.2 Diesel,BS 6,37 litres,Diesel,Sedan,5,Manual
+142,Hyundai,Aura,S 1.2 Amt Diesel,BS 6,37 litres,Diesel,Sedan,5,Automatic
+143,Hyundai,Aura,Sx Plus 1.2 Amt Diesel,BS 6,37 litres,Diesel,Sedan,5,Automatic
+144,Hyundai,Aura,Sx (O) 1.2 Diesel,BS 6,37 litres,Diesel,Sedan,5,Manual
+145,Volkswagen,Polo,Trendline 1.0L (P),BS IV,45 litres,Petrol,Hatchback,5,Manual
+146,Volkswagen,Polo,Comfortline 1.0 (P),BS IV,45 litres,Petrol,Hatchback,5,Manual
+147,Volkswagen,Polo,Highline Plus 1.0 (P),BS IV,45 litres,Petrol,Hatchback,5,Manual
+148,Volkswagen,Polo,Trendline 1.5L (D),BS IV,45 litres,Diesel,Hatchback,5,Manual
+149,Volkswagen,Polo,Comfortline 1.5 (D),BS IV,45 litres,Diesel,Hatchback,5,Manual
+150,Volkswagen,Polo,Highline Plus 1.5 (D),BS IV,45 litres,Diesel,Hatchback,5,Manual
+151,Volkswagen,Polo,Gt Tsi,BS IV,45 litres,Petrol,Hatchback,7,Automatic
+152,Volkswagen,Polo,Gt Tdi,BS IV,45 litres,Diesel,Hatchback,5,Manual
+153,Maruti Suzuki,Dzire,Lxi,BS IV,37 litres,Petrol,Sedan,5,Manual
+154,Maruti Suzuki,Dzire,Vxi,BS IV,37 litres,Petrol,Sedan,5,Manual
+155,Maruti Suzuki,Dzire,Ldi,BS IV,37 litres,Diesel,Sedan,5,Manual
+156,Maruti Suzuki,Dzire,Zxi,BS IV,37 litres,Petrol,Sedan,5,Manual
+157,Maruti Suzuki,Dzire,Vdi,BS IV,37 litres,Diesel,Sedan,5,Manual
+158,Maruti Suzuki,Dzire,Vxi Amt,BS IV,37 litres,Petrol,Sedan,4,Automatic
+159,Maruti Suzuki,Dzire,Zdi Amt,BS IV,37 litres,Diesel,Sedan,5,Automatic
+160,Maruti Suzuki,Dzire,Zdi,BS IV,37 litres,Diesel,Sedan,5,Manual
+161,Maruti Suzuki,Dzire,Zxi Plus,BS IV,37 litres,Petrol,Sedan,5,Manual
+162,Maruti Suzuki,Dzire,Zxi At,BS IV,37 litres,Petrol,Sedan,5,Automatic
+163,Maruti Suzuki,Dzire,Zxi Plus Amt,BS IV,37 litres,Petrol,Sedan,5,Automatic
+164,Maruti Suzuki,Dzire,Zdi Plus,BS IV,37 litres,Diesel,Sedan,5,Manual
+165,Maruti Suzuki,Dzire,Vdi Amt,BS IV,37 litres,Diesel,Sedan,5,Automatic
+166,Maruti Suzuki,Dzire,Zdi Plus Amt,BS IV,37 litres,Diesel,Sedan,5,Automatic
+167,Ford,Freestyle,1.5L Tdci Ambiente,BS IV,40 litres,Diesel,Crossover,5,Manual
+168,Ford,Freestyle,1.5L Tdci Titanium,BS IV,40 litres,Diesel,Hatchback,5,Manual
+169,Ford,Freestyle,1.5L Tdci Titanium Plus,BS IV,40 litres,Diesel,Hatchback,5,Manual
+170,Ford,Freestyle,1.2L Ti-Vct Ambiente,BS IV,42 litres,Petrol,Hatchback,5,Manual
+171,Ford,Freestyle,1.2L Ti-Vct Titanium,BS IV,42 litres,Petrol,Hatchback,5,Manual
+172,Ford,Freestyle,1.2L Ti-Vct Titanium Plus,BS IV,42 litres,Petrol,Hatchback,5,Manual
+173,Ford,Freestyle,1.2L Ti-Vct Trend Plus,BS IV,42 litres,Petrol,Crossover,5,Manual
+174,Ford,Freestyle,1.5L Tdci Trend Plus,BS IV,42 litres,Diesel,Crossover,5,Manual
+177,Volkswagen,Ameo,Highline Plus 1.5L Tdi Dsg,BS IV,45 litres,Diesel,Sedan,7,Automatic
+179,Volkswagen,Ameo,Trendline 1.0L,BS IV,45 litres,Petrol,Sedan,5,Manual
+180,Volkswagen,Ameo,Comfortline 1.0L,BS IV,45 litres,Petrol,Sedan,5,Manual
+181,Volkswagen,Ameo,Highline Plus 1.0L,BS IV,45 litres,Petrol,Sedan,5,Manual
+182,Volkswagen,Ameo,Gt Line Tdi Dsg,BS IV,45 litres,Diesel,Sedan,7,Automatic
+183,Ford,Aspire,1.2 Ti-Vct Ambiente,BS IV,42 litres,Petrol,Sedan,5,Manual
+184,Ford,Aspire,1.2 Ti-Vct Trend Plus,BS IV,42 litres,Petrol,Sedan,5,Manual
+185,Ford,Aspire,1.2 Ti-Vct Trend,BS IV,42 litres,Petrol,Sedan,5,Manual
+186,Ford,Aspire,1.5 Tdci Ambiente,BS IV,40 litres,Diesel,Sedan,5,Manual
+187,Ford,Aspire,1.5 Tdci Trend,BS IV,40 litres,Diesel,Sedan,5,Manual
+188,Ford,Aspire,1.5 Tdci Trend Plus,BS IV,40 litres,Diesel,Sedan,5,Manual
+189,Ford,Aspire,1.5 Tdci Titanium,BS IV,40 litres,Diesel,Sedan,5,Manual
+190,Ford,Aspire,1.5 Tdci Titanium Plus,BS IV,40 litres,Diesel,Sedan,5,Manual
+191,Ford,Aspire,1.2 Ti-Vct Titanium Plus,BS IV,42 litres,Petrol,Sedan,5,Manual
+192,Ford,Aspire,1.2 Ti-Vct Titanium,BS IV,42 litres,Petrol,Sedan,5,Manual
+193,Ford,Aspire,1.2 Trend Plus Cng,BS IV,42 litres,CNG,Sedan,5,Manual
+194,Ford,Aspire,1.2 Ti-Vct Blu,BS IV,42 litres,Petrol,Sedan,5,Manual
+195,Ford,Aspire,1.5 Tdci Blu,BS IV,40 litres,Diesel,Sedan,5,Manual
+196,Toyota,Platinum Etios,G,BS IV,45 litres,Petrol,Sedan,5,Manual
+197,Toyota,Platinum Etios,V,BS IV,45 litres,Petrol,Sedan,5,Manual
+198,Toyota,Platinum Etios,Gd,BS IV,45 litres,Diesel,Sedan,5,Manual
+199,Toyota,Platinum Etios,Vd,BS IV,45 litres,Diesel,Sedan,5,Manual
+200,Toyota,Platinum Etios,Vxd,BS IV,45 litres,Diesel,Sedan,5,Manual
+201,Toyota,Platinum Etios,Vx,BS IV,45 litres,Petrol,Sedan,5,Manual
+202,Toyota,Platinum Etios,Gx,BS IV,45 litres,Petrol,Sedan,5,Manual
+203,Toyota,Platinum Etios,Gxd,BS IV,45 litres,Diesel,Sedan,5,Manual
+204,Toyota,Platinum Etios,Vxd Limited Edition,BS IV,45 litres,Diesel,Sedan,5,Manual
+205,Toyota,Platinum Etios,Vx Limited Edition,BS IV,45 litres,Petrol,Sedan,5,Manual
+206,Toyota,Etios Cross,V,BS IV,45 litres,Petrol,Hatchback,5,Manual
+207,Toyota,Etios Cross,G,BS IV,45 litres,Petrol,Hatchback,5,Manual
+208,Toyota,Etios Cross,Vd,BS IV,45 litres,Diesel,Hatchback,5,Manual
+209,Toyota,Etios Cross,Gd,BS IV,45 litres,Diesel,Hatchback,5,Manual
+210,Toyota,Etios Cross,1.2 X Edition,BS IV,45 litres,Petrol,Hatchback,5,Manual
+211,Toyota,Etios Cross,1.4 X Edition,BS IV,45 litres,Diesel,Hatchback,5,Manual
+212,Mahindra,Verito Vibe,D2,BS IV,50 litres,Diesel,Hatchback,5,Manual
+213,Mahindra,Verito Vibe,D4,BS IV,50 litres,Diesel,Hatchback,5,Manual
+214,Mahindra,Verito Vibe,D6,BS IV,50 litres,Diesel,Hatchback,5,Manual
+219,Toyota,Glanza,G Hybrid,BS 6,37 litres,Petrol,Hatchback,5,Manual
+220,Toyota,Glanza,V,BS 6,37 litres,Petrol,Hatchback,5,Manual
+221,Toyota,Glanza,G Cvt,BS 6,37 litres,Petrol,Hatchback,5,CVT
+222,Toyota,Glanza,V Cvt,BS 6,37 litres,Petrol,Hatchback,5,CVT
+223,Toyota,Glanza,G Mt,BS 6,37 litres,Petrol,Hatchback,5,Manual
+224,Fiat,Avventura,Multijet Dynamic,BS IV,45 litres,Diesel,Crossover,5,Manual
+225,Fiat,Avventura,Multijet Active,BS IV,45 litres,Diesel,Crossover,5,Manual
+226,Fiat,Avventura,Multijet Emotion,BS IV,45 litres,Diesel,Crossover,5,Manual
+227,Honda,Jazz,V Petrol,BS IV,40 litres,Petrol,Hatchback,5,Manual
+228,Honda,Jazz,Vx Cvt,BS IV,40 litres,Petrol,Hatchback,5,Automatic
+229,Honda,Jazz,Vx Petrol,BS IV,40 litres,Petrol,Hatchback,5,Manual
+230,Honda,Jazz,V Cvt,BS IV,40 litres,Petrol,Hatchback,5,Automatic
+231,Honda,Jazz,S Diesel,BS IV,40 litres,Diesel,Hatchback,6,Manual
+232,Honda,Jazz,V Diesel,BS IV,40 litres,Diesel,Hatchback,6,Manual
+233,Honda,Jazz,Vx Diesel,BS IV,40 litres,Diesel,Hatchback,6,Manual
+234,Honda,Jazz,Exclusive Edition Cvt,BS IV,40 litres,Petrol,Hatchback,5,Automatic
+235,Jeep,Compass Trailhawk,2.0 Trailhawk 4X4 At,BS 6,60 litres,Diesel,SUV,9,Automatic
+236,Jeep,Compass Trailhawk,2.0 Trailhawk (O) 4X4 At,BS 6,60 litres,Diesel,SUV,9,Automatic
+237,Isuzu,Mu-X,4X2,BS IV,76 litres,Diesel,SUV,5,Automatic
+238,Isuzu,Mu-X,4X4,BS IV,76 litres,Diesel,SUV,5,Automatic
+239,Mahindra,Alturas G4,2Wd At,BS IV,70 litres,Diesel,SUV,7,Automatic
+240,Mahindra,Alturas G4,4Wd At,,70 litres,Diesel,SUV,7,Automatic
+241,Volkswagen,Tiguan,Comfortline 2.0L Tdi Amt,BS IV,71 litres,Diesel,SUV,8,Automatic
+243,Honda,Cr-V,2Wd Petrol Cvt,,57 litres,Petrol,SUV,7,Automatic
+244,Honda,Cr-V,2Wd Diesel At,BS IV,57 litres,Diesel,SUV,9,Automatic
+245,Honda,Cr-V,Awd Diesel At,BS IV,57 litres,Diesel,SUV,9,Automatic
+246,Skoda,Superb Sportline,Sportline 1.8L Tsi At,BS IV,66 litres,Petrol,Sedan,7,Automatic
+247,Skoda,Superb Sportline,Sportline 2.0L Tdi At,BS IV,66 litres,Diesel,Sedan,6,Automatic
+248,Audi,A3,35 Tdi Premium Plus,BS IV,50 litres,Diesel,Sedan,6,Automatic
+249,Audi,A3,35 Tdi Technology,BS IV,50 litres,Diesel,Sedan,6,Automatic
+250,Audi,A3,35 Tfsi Premium Plus,BS IV,50 litres,Petrol,Sedan,7,Automatic
+251,Audi,A3,35 Tfsi Technology,BS IV,50 litres,Petrol,Sedan,7,Automatic
+252,,Mercedes-Benz B-Class,B 180 Sport,BS IV,50 litres,Petrol,MPV,7,Automatic
+253,,Mercedes-Benz B-Class,B 200 Cdi Sport,BS IV,50 litres,Diesel,MPV,7,Automatic
+254,,Mercedes-Benz B-Class,B 180 Night Edition,BS IV,50 litres,Petrol,MPV,7,Automatic
+255,,Mercedes-Benz B-Class,B 200 Cdi Night Edition,BS IV,50 litres,Diesel,MPV,7,Automatic
+256,,Mercedes-Benz Cla-Class,200 Sport,BS IV,56 litres,Petrol,Sedan,7,Automatic
+259,Skoda,Kodiaq,Style 2.0 Tdi 4X4 At,BS IV,66 litres,Diesel,SUV,6,Automatic
+260,Skoda,Kodiaq,Laurin And Klement,BS IV,66 litres,Diesel,SUV,6,Automatic
+261,Skoda,Kodiaq,Corporate Edition,BS IV,66 litres,Diesel,SUV,6,Automatic
+262,Dc,Avanti,Standard,BS IV,60 litres,Petrol,Coupe,6,Manual
+263,Audi,Q3,30 Tdi Premium Fwd,BS IV,64 litres,Diesel,SUV,7,Manual
+264,Audi,Q3,35 Tdi Quattro Premium Plus,BS IV,64 litres,Diesel,SUV,7,Automatic
+265,Audi,Q3,35 Tdi Quattro Technology,BS IV,64 litres,Diesel,SUV,7,Automatic
+266,Audi,Q3,30 Tfsi Premium,BS IV,64 litres,Petrol,SUV,7,Automatic
+267,Mini,Cooper 5 Door,Cooper D,BS IV,44 litres,Petrol,Hatchback,6,Automatic
+268,Mini,Convertible,Cooper S,BS IV,44 litres,Petrol,Convertible,6,Automatic
+269,Volvo,Xc40,D4 Momentum,BS IV,,Diesel,SUV,8,Automatic
+270,Volvo,Xc40,D4 Inscription,BS IV,,Diesel,SUV,8,Automatic
+271,Volvo,Xc40,T4 R-Design,BS 6,54 litres,Petrol,SUV,8,Automatic
+273,Audi,A4,Premium Plus 35 Tfsi,BS IV,54 litres,Petrol,Sedan,7,DCT
+274,Audi,A4,Technology 35 Tfsi,BS IV,54 litres,Petrol,Sedan,7,DCT
+275,Mini,John Cooper Works,Hatch,BS 6,44 litres,Petrol,Sports,8,2
+276,Jaguar,Xe,S Petrol,BS 6,61 litres,Petrol,Sedan,8,Automatic
+277,Jaguar,Xe,S Diesel,BS 6,56 litres,Diesel,Sedan,8,Automatic
+278,Jaguar,Xe,Se Diesel,BS 6,56 litres,Diesel,Sedan,8,Automatic
+279,Jaguar,Xe,Se Petrol,BS 6,61 litres,Petrol,Sedan,8,Automatic
+280,Jaguar,Xf,2.0 Prestige,BS IV,74 litres,Petrol,Sedan,8,Automatic
+281,Jaguar,Xf,2.0 Portfolio,BS IV,82 litres,Petrol,Sedan,8,Automatic
+282,Jaguar,Xf,2.0 Portfolio Diesel,BS IV,83 litres,Diesel,Sedan,8,Automatic
+283,Jaguar,Xf,2.0 Prestige Diesel,BS IV,66 litres,Diesel,Sedan,8,Automatic
+284,Jaguar,Xf,2.0 Pure Diesel,BS IV,66 litres,Diesel,Sedan,8,Automatic
+285,Audi,A3 Cabriolet,40 Tfsi,BS IV,50 litres,Petrol,Convertible,7,Automatic
+286,Audi,A6,Premium Plus 45 Tfsi,BS 6,73 litres,Petrol,Sedan,7,Automatic
+287,Audi,A6,Technology 45 Tfsi,BS 6,73 litres,Petrol,Sedan,7,Automatic
+288,Bmw,X3,Xdrive 20D Luxury Line,BS IV,67 litres,Diesel,SUV,8,Automatic
+289,Bmw,X3,Xdrive 30I Luxury Line,BS IV,67 litres,Petrol,SUV,8,Automatic
+290,Bmw,X3,Xdrive20D Xline,BS IV,67 litres,Diesel,SUV,8,Automatic
+291,Land Rover,Discovery Sport,S,BS 6,70 litres,Diesel,SUV,9,Automatic
+292,Land Rover,Discovery Sport,R-Dynamic Se,BS 6,70 litres,Diesel,SUV,9,Automatic
+294,Audi,S5,Sportback,BS IV,58 litres,Petrol,Sedan,7,Automatic
+295,Bmw,X5,Xdrive30D Sport,BS IV,,Diesel,SUV,8,Automatic
+296,Bmw,X5,Xdrive30D Xline,BS IV,,Diesel,SUV,8,Automatic
+297,Bmw,X5,Xdrive40I M Sport,BS IV,,Petrol,SUV,8,Automatic
+298,Ford,Mustang,Fastback V8,BS IV,60.9 litres,Petrol,Sedan,6,Automatic
+301,Jeep,Grand Cherokee,Srt,BS IV,93.5 litres,Petrol,SUV,8,Automatic
+304,Bmw,M2 Competition,Coupe,BS 6,52 litres,Petrol,Coupe,7,Automatic
+307,,Mercedes-Benz Gls,350 Cdi,BS IV,100 litres,Diesel,SUV,7,Automatic
+308,,Mercedes-Benz Gls,63 Amg,BS IV,80 litres,Petrol,SUV,7,Automatic
+309,,Mercedes-Benz Gls,400 4Matic,BS IV,80 litres,Petrol,SUV,7,Automatic
+310,,Mercedes-Benz Gls,Grand Edition Petrol,BS IV,80 litres,Petrol,SUV,7,Automatic
+311,,Mercedes-Benz Gls,Grand Edition Diesel,BS IV,100 litres,Diesel,SUV,7,Automatic
+312,Toyota,Land Cruiser Prado,Vx L,BS IV,87 litres,Diesel,SUV,5,Automatic
+314,Audi,Rs5,Coupe,BS IV,58 litres,Petrol,Coupe,7,Automatic
+315,Bmw,7-Series,730Ld Design Pure Excellence,BS 6,78 litres,Diesel,Sedan,8,Automatic
+316,Bmw,7-Series,730Ld Design Pure Excellence Signature,BS 6,78 litres,Diesel,Sedan,8,Automatic
+317,Bmw,7-Series,730Ld M Sport,BS 6,78 litres,Diesel,Sedan,8,Automatic
+318,Bmw,7-Series,740Li Design Pure Excellence Signature,BS 6,78 litres,Petrol,Sedan,8,Automatic
+319,Bmw,7-Series,745Le Xdrive,BS 6,46 litres,Hybrid,Sedan,8,Automatic
+320,Bmw,7-Series,M760Li Xdrive,BS 6,78 litres,Petrol,Sedan,8,Automatic
+321,Audi,Q8,55 Tfsi Quattro Tiptronic,BS 6,85 litres,Petrol,SUV,8,Automatic
+322,,Mercedes-Benz S-Class,S 350 D,BS IV,90 litres,Diesel,Sedan,7,Automatic
+323,,Mercedes-Benz S-Class,S 450,BS IV,70 litres,Petrol,Sedan,7,Automatic
+324,,Mercedes-Benz S-Class,Amg S 63 Coupe,BS IV,80 litres,Petrol,Coupe,7,Automatic
+325,Maserati,Levante,Diesel,BS IV,80 litres,Diesel,SUV,6,Automatic
+326,Maserati,Levante,Gransport,BS IV,80 litres,Diesel,SUV,6,Automatic
+327,Maserati,Levante,Granlusson,BS IV,80 litres,Diesel,SUV,6,Automatic
+328,,Mercedes-Benz G-Class,Amg G 63,BS 6,96 litres,Petrol,SUV,9,Automatic
+329,,Mercedes-Benz G-Class,G 350D,BS 6,100 litres,Diesel,SUV,9,Automatic
+330,Audi,A8 L,55 Tfsi Quattro,BS 6,82 litres,Petrol,Sedan,8,Automatic
+331,Maserati,Granturismo,Sport,BS IV,86 litres,Petrol,Coupe,6,Automatic
+332,Maserati,Quattroporte,Granlusso,BS 6,70 litres,Diesel,Sports,6,Automatic
+334,,Mercedes-Benz Maybach,S650,BS IV,80 litres,Petrol,Sedan,7,Automatic
+335,,Mercedes-Benz Maybach,S560,BS IV,80 litres,Petrol,Sedan,9,Automatic
+336,Porsche,Panamera,Turbo,BS IV,90 litres,Petrol,Sedan,7,Automatic
+337,Porsche,Panamera,Turbo Executive,BS IV,90 litres,Petrol,Sedan,7,Automatic
+338,Porsche,Panamera,Turbo Sport Turismo,BS IV,90 litres,Petrol,Sedan,7,Automatic
+339,Lexus,Lx 450D,V8,BS IV,93 litres,Diesel,SUV,6,Automatic
+341,Audi,R8,V10 Plus,BS IV,75 litres,Petrol,Coupe,7,Automatic
+343,Bentley,Continental Gt,Coupe,BS IV,90 litres,Petrol,Coupe,8,Automatic
+344,Ferrari,Portofino,V8 Convertible,BS IV,92 litres,Petrol,Convertible,7,Automatic
+345,Bentley,Bentayga,W12,BS IV,85 litres,Petrol,SUV,8,Automatic
+346,Bentley,Bentayga,V8,BS IV,85 litres,Petrol,SUV,8,Automatic
+348,Ferrari,458 Speciale,Coupe,BS IV,86 litres,Petrol,Coupe,7,Automatic
+349,,Rolls-Royce Ghost Series Ii,6.6,BS IV,82.5 litres,Petrol,Sedan,8,Automatic
+350,,Rolls-Royce Ghost Series Ii,Ewb,BS IV,82.5 litres,Petrol,Sedan,8,Automatic
+351,,Rolls-Royce Wraith,Coupe,BS IV,83 litres,Petrol,Coupe,8,Automatic
+352,Bentley,Mulsanne,Sedan,BS IV,90 litres,Petrol,Sedan,8,Automatic
+353,,Rolls-Royce Cullinan,Suv,BS 6,,Petrol,SUV,8,Automatic
+354,,Rolls-Royce Phantom Coupe,6.8 L,BS IV,100 litres,Petrol,Coupe,8,Automatic
+355,Bugatti,Chiron,W16,BS 6,,Petrol,Sports,7,Automatic
+357,Bajaj,Qute (Re60),Qcar,BS IV,,Petrol,Hatchback,5,Manual
+358,Bajaj,Qute (Re60),Qcar Cng,BS IV,,CNG,Hatchback,5,Manual
+359,Maruti Suzuki,Alto,Std,BS 6,35 litres,Petrol,Hatchback,5,Manual
+360,Maruti Suzuki,Alto,Std (O),BS 6,35 litres,Petrol,Hatchback,5,Manual
+361,Maruti Suzuki,Alto,Lxi,BS 6,35 litres,Petrol,Hatchback,5,Manual
+362,Maruti Suzuki,Alto,Lxi (O),BS 6,35 litres,Petrol,Hatchback,5,Manual
+363,Maruti Suzuki,Alto,Vxi,BS 6,35 litres,Petrol,Hatchback,5,Manual
+364,Maruti Suzuki,Alto,Lxi Cng (Cng +,BS 6,35 litres,CNG + Petrol,Hatchback,5,Manual
+365,Maruti Suzuki,Alto,Lxi (O) Cng (Cng +,BS 6,35 litres,CNG + Petrol,Hatchback,5,Manual
+366,Maruti Suzuki,Alto,Vxi Plus,BS 6,35 litres,Petrol,Hatchback,5,Manual
+367,Maruti Suzuki,S-Presso,Std,BS 6,27 litres,Petrol,Hatchback,5,Manual
+368,Maruti Suzuki,S-Presso,Std (O),BS 6,27 litres,Petrol,Hatchback,5,Manual
+369,Maruti Suzuki,S-Presso,Lxi,BS 6,27 litres,Petrol,Hatchback,5,Manual
+370,Maruti Suzuki,S-Presso,Lxi (O),BS 6,27 litres,Petrol,Hatchback,5,Manual
+371,Maruti Suzuki,S-Presso,Vxi,BS 6,27 litres,Petrol,Hatchback,5,Manual
+372,Maruti Suzuki,S-Presso,Vxi (O),BS 6,27 litres,Petrol,Hatchback,5,Manual
+373,Maruti Suzuki,S-Presso,Vxi Ags,BS 6,27 litres,Petrol,Hatchback,5,AMT
+374,Maruti Suzuki,S-Presso,Vxi+,BS 6,27 litres,Petrol,Hatchback,5,Manual
+375,Maruti Suzuki,S-Presso,Vxi (O) Ags,BS 6,27 litres,Petrol,Hatchback,5,AMT
+376,Maruti Suzuki,S-Presso,Vxi+ Ags,BS 6,27 litres,Petrol,Hatchback,5,AMT
+377,Maruti Suzuki,Celerio,Lxi,BS 6,35 litres,Petrol,Hatchback,5,Manual
+378,Maruti Suzuki,Celerio,Vxi,BS 6,35 litres,Petrol,Hatchback,5,Manual
+379,Maruti Suzuki,Celerio,Vxi At,BS 6,35 litres,Petrol,Hatchback,5,Automatic
+380,Maruti Suzuki,Celerio,Zxi,BS 6,35 litres,Petrol,Hatchback,5,Manual
+381,Maruti Suzuki,Celerio,Zxi (Opt),BS 6,35 litres,Petrol,Hatchback,5,Manual
+382,Maruti Suzuki,Celerio,Vxi Cng Mt,BS 6,35 litres,CNG,Hatchback,5,Manual
+383,Maruti Suzuki,Celerio,Zxi Ags,BS 6,35 litres,Petrol,Hatchback,5,Automatic
+384,Maruti Suzuki,Celerio,Lxi Mt (O),BS 6,35 litres,Petrol,Hatchback,5,Manual
+385,Maruti Suzuki,Celerio,Vxi (O) Mt,BS 6,35 litres,Petrol,Hatchback,5,Manual
+386,Maruti Suzuki,Celerio,Vxi (O) Ags,BS 6,35 litres,Petrol,Hatchback,5,Automatic
+387,Maruti Suzuki,Celerio,Zxi (O) Ags,BS 6,35 litres,Petrol,Hatchback,5,Automatic
+388,Hyundai,Grand I10 Prime,Era T Crdi,BS IV,43 litres,Diesel,Hatchback,5,Manual
+389,Hyundai,Grand I10 Prime,Era T+ Crdi,BS IV,43 litres,Diesel,Hatchback,5,Manual
+390,Hyundai,Grand I10 Prime,Era T Vtvt,BS IV,43 litres,Petrol,Hatchback,5,Manual
+391,Hyundai,Grand I10 Prime,Era T+ Vtvt,BS IV,43 litres,Petrol,Hatchback,5,Manual
+392,Hyundai,Grand I10 Prime,Era T+ Cng Vtvt,BS IV,43 litres,CNG,Hatchback,5,Manual
+393,Hyundai,Grand I10 Prime,Era T Cng Vtvt,BS IV,43 litres,CNG,Hatchback,5,Manual
+394,Mahindra,Kuv100 Nxt,K2 6Str,BS IV,35 litres,Petrol,Hatchback,5,Manual
+395,Mahindra,Kuv100 Nxt,K2+ 6Str,BS IV,35 litres,Petrol,Hatchback,5,Manual
+396,Mahindra,Kuv100 Nxt,K2 D 6Str,BS IV,35 litres,Diesel,Hatchback,5,Manual
+397,Mahindra,Kuv100 Nxt,K2+ D 6Str,BS IV,35 litres,Diesel,Hatchback,5,Manual
+398,Mahindra,Kuv100 Nxt,K4+ D 6Str,BS IV,35 litres,Diesel,Hatchback,5,Manual
+399,Mahindra,Kuv100 Nxt,K4+ 6Str,BS IV,35 litres,Petrol,Hatchback,5,Manual
+400,Mahindra,Kuv100 Nxt,K6+ 6Str,BS IV,35 litres,Petrol,Hatchback,5,Manual
+401,Mahindra,Kuv100 Nxt,K6+ D 6Str,BS IV,35 litres,Diesel,Hatchback,5,Manual
+402,Mahindra,Kuv100 Nxt,K8 6Str,BS IV,35 litres,Petrol,Hatchback,5,Manual
+403,Mahindra,Kuv100 Nxt,K8 D 6Str,BS IV,35 litres,Diesel,Hatchback,5,Manual
+404,Mahindra,Kuv100 Nxt,K8 6 Str Dual Tone,BS IV,35 litres,Petrol,Hatchback,5,Manual
+405,Mahindra,Kuv100 Nxt,K8 D 6 Str Dual Tone,BS IV,35 litres,Diesel,Hatchback,5,Manual
+406,Mahindra,Kuv100 Nxt,K4+ 5Str,BS IV,35 litres,Petrol,Hatchback,5,Manual
+407,Mahindra,Kuv100 Nxt,K6+ 5Str,BS IV,35 litres,Petrol,Hatchback,5,Manual
+408,Mahindra,Kuv100 Nxt,K8 5Str,BS IV,35 litres,Petrol,Hatchback,5,Manual
+409,Mahindra,Kuv100 Nxt,K4+ D 5Str,BS IV,35 litres,Diesel,Hatchback,5,Manual
+410,Mahindra,Kuv100 Nxt,K6+ D 5Str,BS IV,35 litres,Diesel,Hatchback,5,Manual
+411,Mahindra,Kuv100 Nxt,K8 D 5Str,BS IV,35 litres,Diesel,Hatchback,5,Manual
+412,Mahindra,Kuv100 Nxt,K2 D 5Str Taxi,BS IV,35 litres,Diesel,Hatchback,5,Manual
+413,Mahindra,Kuv100 Nxt,K2 D 6Str Taxi,BS IV,35 litres,Diesel,Hatchback,5,Manual
+414,Mahindra,Kuv100 Nxt,K2 5Str Cng Taxi,BS IV,35 litres,Petrol,Hatchback,5,Manual
+415,Mahindra,Kuv100 Nxt,K2 6Str Cng Taxi,BS IV,35 litres,Petrol,Hatchback,5,Manual
+416,Maruti Suzuki,Swift,Lxi,BS 6,37 litres,Petrol,Hatchback,5,Manual
+417,Maruti Suzuki,Swift,Vxi,BS 6,37 litres,Petrol,Hatchback,5,Manual
+418,Maruti Suzuki,Swift,Vxi Amt,BS 6,37 litres,Petrol,Hatchback,5,Automatic
+419,Maruti Suzuki,Swift,Zxi,BS 6,37 litres,Petrol,Hatchback,5,Manual
+420,Maruti Suzuki,Swift,Zxi Amt,BS 6,37 litres,Petrol,Hatchback,5,Automatic
+421,Maruti Suzuki,Swift,Zxi Plus,BS 6,37 litres,Petrol,Hatchback,5,Manual
+422,Maruti Suzuki,Swift,Ldi,BS IV,37 litres,Diesel,Hatchback,5,Manual
+423,Maruti Suzuki,Swift,Vdi,BS IV,37 litres,Diesel,Hatchback,5,Manual
+424,Maruti Suzuki,Swift,Vdi Amt,BS IV,37 litres,Diesel,Hatchback,5,Automatic
+425,Maruti Suzuki,Swift,Zdi,BS IV,37 litres,Diesel,Hatchback,5,Manual
+426,Maruti Suzuki,Swift,Zdi Amt,BS IV,37 litres,Diesel,Hatchback,5,Automatic
+427,Maruti Suzuki,Swift,Zdi Plus,BS IV,37 litres,Diesel,Hatchback,5,Manual
+428,Maruti Suzuki,Swift,Zxi Plus Amt,BS 6,37 litres,Petrol,Hatchback,5,Automatic
+429,Maruti Suzuki,Swift,Zdi Plus Amt,BS IV,37 litres,Diesel,Hatchback,5,Automatic
+430,Tata,Altroz,Xe Petrol,BS 6,37 litres,Petrol,Hatchback,5,Manual
+431,Tata,Altroz,Xm Petrol,BS 6,37 litres,Petrol,Hatchback,5,Manual
+432,Tata,Altroz,Xt Petrol,BS 6,37 litres,Petrol,Hatchback,5,Manual
+433,Tata,Altroz,Xz Petrol,BS 6,37 litres,Petrol,Hatchback,5,Manual
+434,Tata,Altroz,Xz (O) Petrol,BS 6,37 litres,Petrol,Hatchback,5,Manual
+435,Tata,Altroz,Xe Diesel,BS 6,37 litres,Diesel,Hatchback,5,Manual
+436,Tata,Altroz,Xm Diesel,BS 6,37 litres,Diesel,Hatchback,5,Manual
+437,Tata,Altroz,Xt Diesel,BS 6,37 litres,Diesel,Hatchback,5,Manual
+438,Tata,Altroz,Xz Diesel,BS 6,37 litres,Diesel,Hatchback,5,Manual
+439,Tata,Altroz,Xz (O) Diesel,BS 6,37 litres,Diesel,Hatchback,5,Manual
+440,Icml,Extreme,Ld Di Non Ac 9 Seater Bsiii,BS III,50 litres,Diesel,SUV,5,Manual
+441,Icml,Extreme,Ld Crdfi Non Ac 9 Seater Bsiv,BS IV,50 litres,Diesel,SUV,5,Manual
+442,Icml,Extreme,Ld Di Ps Ac 9 Seater Bsiii,BS III,50 litres,Diesel,SUV,5,Manual
+443,Icml,Extreme,Ld Crdfi Ps Ac 9 Seater Bsiii,BS IV,50 litres,Diesel,SUV,5,Manual
+444,Icml,Extreme,Sd Di 9 Seater Bsiii,BS III,50 litres,Diesel,SUV,5,Manual
+445,Icml,Extreme,Ld Crdfi Ps Ac 9 Seater Bsiv,BS IV,50 litres,Diesel,SUV,5,Manual
+446,Icml,Extreme,Vd Crdfi 7 Seater Bsiii,BS III,50 litres,Diesel,SUV,5,Manual
+447,Icml,Extreme,Vd Di 7 Seater Bsiii,BS III,50 litres,Diesel,SUV,5,Manual
+448,Icml,Extreme,Sd Crdfi 9 Seater Bsiv,BS IV,50 litres,Diesel,SUV,5,Manual
+449,Icml,Extreme,Vd Crdfi 7 Seater Bsiv,BS IV,50 litres,Diesel,SUV,5,Manual
+450,Icml,Extreme,Sd Crdfi 9 Seater Bsiii,BS III,50 litres,Diesel,SUV,5,Manual
+451,Tata,Tigor,Revotron Xe,BS 6,35 litres,Petrol,Sedan,5,Manual
+452,Tata,Tigor,Revotron Xm,BS 6,35 litres,Petrol,Sedan,5,Manual
+453,Tata,Tigor,Revotron Xz,BS 6,35 litres,Petrol,Sedan,5,Manual
+454,Tata,Tigor,Revotron Xz Plus,BS 6,35 litres,Petrol,Sedan,5,Manual
+455,Tata,Tigor,Revotron Xma,BS 6,35 litres,Petrol,Sedan,5,AMT
+456,Tata,Tigor,Revotron Xza Plus,BS 6,35 litres,Petrol,Sedan,5,AMT
+457,Tata,Zest,Xe Petrol,BS IV,44 litres,Petrol,Sedan,5,Manual
+458,Tata,Zest,Xe Diesel,BS IV,44 litres,Diesel,Sedan,5,Manual
+459,Tata,Zest,Xm Petrol,BS IV,44 litres,Petrol,Sedan,5,Manual
+460,Tata,Zest,Xms Petrol,BS IV,44 litres,Petrol,Sedan,5,Manual
+461,Tata,Zest,Xt Petrol,BS IV,44 litres,Petrol,Sedan,5,Manual
+462,Tata,Zest,Xm Diesel,BS IV,44 litres,Diesel,Sedan,5,Manual
+463,Tata,Zest,Xms Diesel,BS IV,44 litres,Diesel,Sedan,5,Manual
+464,Tata,Zest,Xt Diesel,BS IV,44 litres,Diesel,Sedan,5,Manual
+465,Tata,Zest,Xma Diesel,BS IV,44 litres,Diesel,Sedan,5,AMT
+466,Tata,Zest,Xta Diesel,BS IV,44 litres,Diesel,Sedan,5,Automatic
+467,Tata,Zest,Zest Premio Edition,BS IV,44 litres,Diesel,Sedan,5,Manual
+468,Honda,Amaze,S Cvt Petrol,BS 6,35 litres,Petrol,Sedan,5,Automatic
+469,Honda,Amaze,E Mt Diesel,BS 6,35 litres,Diesel,Sedan,5,Manual
+470,Honda,Amaze,E Mt Petrol,BS 6,35 litres,Petrol,Sedan,5,Manual
+471,Honda,Amaze,S Cvt Diesel,BS 6,35 litres,Diesel,Sedan,5,Automatic
+472,Honda,Amaze,V Cvt Petrol,BS 6,35 litres,Petrol,Sedan,5,Automatic
+473,Honda,Amaze,V Cvt Diesel,BS 6,35 litres,Diesel,Sedan,5,Automatic
+474,Honda,Amaze,S Mt Diesel,BS 6,35 litres,Diesel,Sedan,5,Manual
+475,Honda,Amaze,Vx Mt Diesel,BS 6,35 litres,Diesel,Sedan,5,Manual
+476,Honda,Amaze,V Mt Diesel,BS 6,35 litres,Diesel,Sedan,5,Manual
+477,Honda,Amaze,Vx Mt Petrol,BS 6,35 litres,Petrol,Sedan,5,Manual
+478,Honda,Amaze,V Mt Petrol,BS 6,35 litres,Petrol,Sedan,5,Manual
+479,Honda,Amaze,S Mt Petrol,BS 6,35 litres,Petrol,Sedan,5,Manual
+480,Honda,Amaze,Exclusive Edition Diesel,BS 6,35 litres,Diesel,Sedan,5,Manual
+481,Honda,Amaze,Exclusive Edition Petrol,BS 6,35 litres,Petrol,Sedan,5,Manual
+482,Honda,Amaze,Vx Cvt Diesel,BS 6,35 litres,Diesel,Sedan,5,Automatic
+483,Honda,Amaze,Vx Cvt Petrol,BS 6,35 litres,Petrol,Sedan,5,Automatic
+484,Honda,Amaze,Ace Edition Cvt Diesel,BS 6,35 litres,Diesel,Sedan,5,Automatic
+485,Honda,Amaze,Ace Edition Cvt Petrol,BS 6,35 litres,Petrol,Sedan,5,Automatic
+486,Honda,Amaze,Ace Edition Mt Diesel,BS 6,35 litres,Diesel,Sedan,5,Manual
+487,Honda,Amaze,Ace Edition Mt Petrol,BS 6,35 litres,Petrol,Sedan,5,Manual
+488,Maruti Suzuki,Gypsy,Hard Top,BS III,40 litres,Petrol,SUV,5,Manual
+489,Maruti Suzuki,Gypsy,Soft Top,BS III,40 litres,Petrol,SUV,5,Manual
+490,Hyundai,Venue,1.2 Kappa Mt E,BS IV,45 litres,Petrol,SUV,5,Manual
+491,Hyundai,Venue,1.0 Turbo Gdi Mt S,BS IV,45 litres,Petrol,SUV,7,Manual
+492,Hyundai,Venue,1.4 Crdi Mt E,BS IV,,Diesel,SUV,6,Manual
+493,Hyundai,Venue,1.0 Turbo Gdi Mt Sx,BS IV,45 litres,Petrol,SUV,6,Manual
+494,Hyundai,Venue,1.0 Turbo Gdi Mt Sx Dual Tone,BS IV,45 litres,Petrol,SUV,6,Manual
+495,Hyundai,Venue,1.0 Turbo Gdi Mt Sx(O),BS IV,45 litres,Petrol,SUV,6,Manual
+496,Hyundai,Venue,1.0 Turbo Gdi Dct S,BS IV,45 litres,Petrol,SUV,7,DCT
+497,Hyundai,Venue,1.0 Turbo Gdi Dct Sx Plus,BS IV,45 litres,Petrol,SUV,7,DCT
+498,Hyundai,Venue,1.2 Kappa Mt S,BS IV,45 litres,Petrol,SUV,5,Manual
+499,Hyundai,Venue,1.4 Crdi Mt S,BS IV,,Diesel,SUV,6,Manual
+500,Hyundai,Venue,1.4 Crdi Mt Sx,BS IV,,Diesel,SUV,6,Manual
+501,Hyundai,Venue,1.4 Crdi Mt Sx Dual Tone,BS IV,,Diesel,SUV,6,Manual
+502,Hyundai,Venue,1.4 Crdi Mt Sx(O),BS IV,45 litres,Diesel,SUV,6,Manual
+527,Fiat,Linea,Active Fire,BS IV,45 litres,Petrol,Sedan,5,Manual
+528,Fiat,Linea,Active Multijet,BS IV,45 litres,Diesel,Sedan,5,Manual
+529,Fiat,Linea,Dynamic Multijet,BS IV,45 litres,Diesel,Sedan,5,Manual
+530,Fiat,Linea,Emotion Multijet,BS IV,45 litres,Diesel,Sedan,5,Manual
+531,Fiat,Linea,T-Jet Emotion,BS IV,45 litres,Petrol,Sedan,5,Manual
+532,Mahindra,Bolero Power Plus,Zlx,BS IV,60 litres,Diesel,SUV,5,Manual
+533,Mahindra,Bolero Power Plus,Slx,BS IV,60 litres,Diesel,SUV,5,Manual
+534,Mahindra,Bolero Power Plus,Sle,BS IV,60 litres,Diesel,SUV,5,Manual
+535,Mahindra,Bolero Power Plus,Lx,BS IV,60 litres,Diesel,SUV,5,Manual
+536,Mahindra,Bolero Power Plus,Plus Ac Bs4 Ps,BS IV,60 litres,Diesel,SUV,5,Manual
+537,Mahindra,Bolero Power Plus,Plus Non Ac Bs4 Ps,BS III,60 litres,Diesel,SUV,5,Manual
+538,Maruti Suzuki,Vitara Brezza,Ldi,BS IV,48 litres,Diesel,SUV,5,Manual
+539,Maruti Suzuki,Vitara Brezza,Vdi,BS IV,48 litres,Diesel,SUV,5,Manual
+540,Maruti Suzuki,Vitara Brezza,Zdi,BS IV,48 litres,Diesel,SUV,5,Manual
+541,Maruti Suzuki,Vitara Brezza,Zdi+,BS IV,48 litres,Diesel,SUV,5,Manual
+542,Maruti Suzuki,Vitara Brezza,Zdi+ Dual Tone,BS IV,48 litres,Diesel,SUV,5,Manual
+543,Maruti Suzuki,Vitara Brezza,Zdi+ Ags,BS IV,48 litres,Diesel,SUV,5,Manual
+544,Maruti Suzuki,Vitara Brezza,Vdi Ags,BS IV,48 litres,Diesel,SUV,5,Automatic
+545,Maruti Suzuki,Vitara Brezza,Zdi Ags,BS IV,48 litres,Diesel,SUV,5,Automatic
+546,Maruti Suzuki,Vitara Brezza,Zdi+ Dual Tone Ags,BS IV,48 litres,Diesel,SUV,5,Automatic
+547,Hyundai,I20 Active,1.2 S,BS IV,40 litres,Petrol,Hatchback,5,Manual
+548,Hyundai,I20 Active,1.2 Sx,BS IV,40 litres,Petrol,Hatchback,6,Manual
+549,Hyundai,I20 Active,1.2 Sx Dual Tone,BS IV,40 litres,Petrol,Hatchback,6,Manual
+550,Hyundai,I20 Active,1.4 Sx,BS IV,40 litres,Diesel,Hatchback,6,Manual
+551,Ford,Ecosport,1.5L Ti-Vct Ambiente,BS 6,52 litres,Petrol,SUV,5,Manual
+552,Ford,Ecosport,1.5L Ti-Vct Trend,BS 6,52 litres,Petrol,SUV,5,Manual
+553,Ford,Ecosport,1.5L Ti-Vct Titanium,BS 6,52 litres,Petrol,SUV,5,Manual
+554,Ford,Ecosport,1.5L Ti-Vct Titanium Plus At,BS 6,52 litres,Petrol,SUV,6,Automatic
+555,Ford,Ecosport,1.5L Tdci Ambiente,BS 6,52 litres,Diesel,SUV,5,Manual
+556,Ford,Ecosport,1.5L Tdci Trend,BS 6,52 litres,Diesel,SUV,5,Manual
+557,Ford,Ecosport,1.5L Tdci Titanium,BS 6,52 litres,Diesel,SUV,5,Manual
+558,Ford,Ecosport,1.5L Tdci Titanium Plus,BS 6,52 litres,Diesel,SUV,5,Manual
+559,Ford,Ecosport,1.5L Ti-Vct Titanium Plus,BS 6,52 litres,Petrol,SUV,5,Manual
+560,Ford,Ecosport,1.5L Tdci Titanium S,BS 6,52 litres,Diesel,SUV,5,Manual
+561,Ford,Ecosport,1.5L Ti-Vct Thunder Edition,BS 6,52 litres,Petrol,SUV,5,Manual
+562,Ford,Ecosport,1.5L Tdci Thunder Edition,BS 6,52 litres,Diesel,SUV,5,Manual
+563,Renault,Duster,Rxe Petrol,BS IV,50 litres,Petrol,SUV,5,Manual
+564,Renault,Duster,Rxs Petrol,BS IV,50 litres,Petrol,SUV,5,Manual
+565,Renault,Duster,Rxs (Opt) Cvt,BS IV,50 litres,Petrol,SUV,6,CVT
+566,Renault,Duster,85 Ps Rxe Mt Diesel,BS IV,50 litres,Diesel,SUV,5,Manual
+567,Renault,Duster,85 Ps Rxs Mt Diesel,BS IV,50 litres,Diesel,SUV,5,Manual
+568,Renault,Duster,110 Ps Rxs Mt Diesel,BS IV,50 litres,Diesel,SUV,6,Automatic
+569,Renault,Duster,110 Ps Rxz Mt Diesel,BS IV,50 litres,Diesel,SUV,6,Automatic
+570,Renault,Duster,110 Ps Rxz Amt Diesel,BS IV,50 litres,Diesel,SUV,6,Automatic
+571,Renault,Duster,110 Ps Rxs Awd (Opt) Diesel,BS IV,50 litres,Diesel,SUV,6,Automatic
+572,Hyundai,Verna,1.6 Vtvt Sx,BS IV,45 litres,Petrol,Sedan,5,Manual
+573,Hyundai,Verna,1.6 Crdi Sx,BS IV,45 litres,Diesel,Sedan,6,Manual
+574,Hyundai,Verna,1.6 Crdi Sx (O),BS IV,45 litres,Diesel,Sedan,4,Manual
+575,Hyundai,Verna,1.6 Vtvt Sx (O),BS IV,45 litres,Petrol,Sedan,5,Manual
+576,Hyundai,Verna,1.6 Crdi Sx Plus At,BS IV,45 litres,Diesel,Sedan,4,Automatic
+577,Hyundai,Verna,1.6 Vtvt Sx(O) At,BS IV,45 litres,Petrol,Sedan,4,Automatic
+578,Hyundai,Verna,1.4 Vtvt Ex,BS IV,45 litres,Petrol,Sedan,5,Manual
+579,Hyundai,Verna,1.4 Vtvt E,BS IV,45 litres,Petrol,Sedan,5,Manual
+580,Hyundai,Verna,1.6 Vtvt Sx (O) Anniversary Edition,BS IV,45 litres,Petrol,Sedan,5,Manual
+581,Hyundai,Verna,1.6 Vtvt Sx Plus At,BS IV,45 litres,Petrol,Sedan,6,Automatic
+582,Hyundai,Verna,1.6 Crdi Sx(O) At,BS IV,45 litres,Diesel,Sedan,6,Automatic
+583,Hyundai,Verna,1.4 Crdi E,BS IV,45 litres,Diesel,Sedan,5,Manual
+584,Hyundai,Verna,1.4 Crdi Ex,BS IV,45 litres,Diesel,Sedan,5,Manual
+585,Mahindra,Xuv300,1.2 W4,BS 6,42 litres,Petrol,SUV,6,Manual
+586,Mahindra,Xuv300,1.2 W6,BS 6,42 litres,Petrol,SUV,6,Manual
+587,Mahindra,Xuv300,1.2 W8,BS 6,42 litres,Petrol,SUV,6,Manual
+588,Mahindra,Xuv300,1.2 W8(O),BS 6,42 litres,Petrol,SUV,6,Manual
+589,Mahindra,Xuv300,1.5 W4,BS 6,42 litres,Diesel,SUV,6,Manual
+590,Mahindra,Xuv300,1.5 W6,BS 6,42 litres,Diesel,SUV,6,Manual
+591,Mahindra,Xuv300,1.5 W8,BS 6,42 litres,Diesel,SUV,6,Manual
+592,Mahindra,Xuv300,1.5 W8 (O),BS 6,42 litres,Diesel,SUV,6,Manual
+593,Mahindra,Xuv300,1.5 W8 Amt,BS 6,42 litres,Diesel,SUV,6,Automatic
+594,Mahindra,Xuv300,1.5 W8 (O) Amt,BS 6,42 litres,Diesel,SUV,6,Automatic
+595,Mahindra,Xuv300,1.5 W6 Amt,BS 6,42 litres,Diesel,SUV,6,AMT
+596,Renault,Lodgy,85 Ps Std,BS IV,50 litres,Diesel,MUV,5,Manual
+597,Renault,Lodgy,85 Ps Rxe 8 Seater,BS IV,50 litres,Diesel,MUV,5,Manual
+598,Renault,Lodgy,Stepway Rxz 110Ps 8-Seater,BS IV,50 litres,Diesel,MUV,6,Manual
+599,Renault,Lodgy,Stepway Rxz 110Ps 7-Seater,BS IV,50 litres,Diesel,MUV,6,Manual
+600,Renault,Lodgy,Stepway Rxl 85Ps 8-Seater,BS IV,50 litres,Diesel,MUV,5,Manual
+601,Renault,Lodgy,Stepway Rxz 85Ps 8-Seater,BS IV,50 litres,Diesel,MUV,5,Manual
+602,Renault,Lodgy,85 Ps Rxe 7 Seater,BS IV,50 litres,Diesel,MUV,5,Manual
+603,Volkswagen,Vento,Trendline 1.6 (P),BS IV,55 litres,Petrol,Sedan,5,Manual
+604,Volkswagen,Vento,Highline 1.6 (P),BS IV,55 litres,Petrol,Sedan,5,Manual
+605,Volkswagen,Vento,Comfortline 1.6 (P),BS IV,55 litres,Petrol,Sedan,5,Manual
+606,Volkswagen,Vento,Highline 1.2 (P) Dsg,BS IV,55 litres,Petrol,Sedan,7,Automatic
+607,Volkswagen,Vento,Highline Plus 1.2 (P) Dsg,BS IV,55 litres,Petrol,Sedan,7,Automatic
+608,Volkswagen,Vento,Trendline 1.5 (D),BS IV,55 litres,Diesel,Sedan,5,Manual
+609,Volkswagen,Vento,Comfortline 1.5 (D),BS IV,55 litres,Diesel,Sedan,5,Manual
+610,Volkswagen,Vento,Highline 1.5 (D),BS IV,55 litres,Diesel,Sedan,5,Manual
+611,Volkswagen,Vento,Highline 1.5 (D) Dsg,BS IV,55 litres,Diesel,Sedan,7,Automatic
+612,Volkswagen,Vento,Highline Plus 1.5 (D) Dsg,BS IV,55 litres,Diesel,Sedan,5,Automatic
+613,Volkswagen,Vento,Gt Line (D),BS IV,45 litres,Diesel,Hatchback,5,Manual
+614,Volkswagen,Vento,Gt Line (P) Dsg,BS IV,45 litres,Petrol,Hatchback,7,Automatic
+620,Honda,Brv,E Petrol,BS IV,42 litres,Petrol,SUV,7,Manual
+621,Honda,Brv,S Petrol,BS IV,42 litres,Petrol,SUV,7,Manual
+622,Honda,Brv,V Petrol,BS IV,42 litres,Petrol,SUV,7,Manual
+623,Honda,Brv,Vx Petrol,BS IV,42 litres,Petrol,SUV,7,Manual
+624,Honda,Brv,V Cvt Petrol,BS IV,42 litres,Petrol,SUV,7,Automatic
+625,Honda,Brv,S Diesel,BS IV,42 litres,Diesel,SUV,7,Manual
+626,Honda,Brv,V Diesel,BS IV,42 litres,Diesel,SUV,7,Manual
+627,Honda,Brv,Vx Diesel,BS IV,42 litres,Diesel,SUV,7,Manual
+628,Mahindra,Thar,Crde,BS IV,60 litres,Diesel,SUV,5,Manual
+629,Mahindra,Thar,700 Special Edition,BS IV,60 litres,Diesel,SUV,5,Manual
+630,Mahindra,Thar,Crde Abs,BS IV,60 litres,Diesel,SUV,5,Manual
+631,Force,Gurkha,Xpedition 5 Door,BS IV,63 litres,Diesel,SUV,6,Manual
+632,Force,Gurkha,Xplorer 3 Door,BS IV,63 litres,Diesel,SUV,6,Manual
+633,Force,Gurkha,Xtreme,BS IV,63 litres,Diesel,SUV,5,Manual
+634,Force,Gurkha,Xtreme Abs,BS IV,63 litres,Diesel,SUV,5,Manual
+635,Force,Gurkha,Xpedition 3 Door,BS IV,63 litres,Diesel,SUV,6,Manual
+636,Force,Gurkha,Xplorer 5 Door,BS IV,63 litres,Diesel,SUV,6,Manual
+637,Maruti Suzuki,Xl6,Zeta Mt,BS 6,45 litres,Petrol,MPV,5,Manual
+638,Maruti Suzuki,Xl6,Alpha Mt,BS 6,45 litres,Petrol,MPV,5,Manual
+639,Maruti Suzuki,Xl6,Zeta At,BS 6,45 litres,Petrol,MPV,5,Automatic
+640,Maruti Suzuki,Xl6,Alpha At,BS 6,45 litres,Petrol,MPV,5,Automatic
+641,Fiat,Abarth Avventura,1.4 T-Jet,BS IV,,Petrol,Crossover,5,Manual
+642,Mahindra,Tuv300 Plus,P4,BS IV,60 litres,Diesel,SUV,5,Manual
+643,Mahindra,Tuv300 Plus,P6,BS IV,60 litres,Diesel,SUV,5,Manual
+644,Mahindra,Tuv300 Plus,P8,BS IV,60 litres,Diesel,SUV,5,Manual
+645,Mahindra,Marazzo,M2 7 Str,BS IV,45 litres,Diesel,MPV,6,Manual
+646,Mahindra,Marazzo,M4 7 Str,BS IV,45 litres,Diesel,MPV,6,Manual
+647,Mahindra,Marazzo,M6 7 Str,BS IV,45 litres,Diesel,MPV,6,Manual
+648,Mahindra,Marazzo,M8 7 Str,BS IV,45 litres,Diesel,MPV,6,Manual
+649,Mahindra,Marazzo,M2 8 Str,BS IV,45 litres,Diesel,MPV,6,Manual
+650,Mahindra,Marazzo,M4 8 Str,BS IV,45 litres,Diesel,MPV,6,Manual
+651,Mahindra,Marazzo,M6 8 Str,BS IV,45 litres,Diesel,MPV,6,Manual
+652,Mahindra,Marazzo,M8 8 Str,BS IV,45 litres,Diesel,MPV,6,Manual
+653,Mahindra,Scorpio,S3 2Wd,BS IV,60 litres,Diesel,SUV,5,Manual
+654,Mahindra,Scorpio,4Wd Getaway,BS IV,80 litres,Diesel,SUV,5,Manual
+655,Mahindra,Scorpio,2Wd Getaway,BS IV,80 litres,Diesel,SUV,5,Manual
+656,Mahindra,Scorpio,S5 2Wd,BS IV,60 litres,Diesel,SUV,5,Manual
+657,Mahindra,Scorpio,S7 120 2Wd,BS IV,60 litres,Diesel,SUV,5,Manual
+658,Mahindra,Scorpio,S7 140 2Wd,BS IV,60 litres,Diesel,SUV,5,Manual
+659,Mahindra,Scorpio,S11 2Wd,BS IV,60 litres,Diesel,SUV,5,Manual
+660,Mahindra,Scorpio,S11 4Wd,BS IV,60 litres,Diesel,SUV,5,Manual
+661,Mahindra,Scorpio,S9 2Wd,BS IV,60 litres,Diesel,SUV,6,Manual
+662,Skoda,Monte Carlo,Monte Carlo 1.5 Tdi At,BS IV,55 litres,Diesel,Sedan,7,Automatic
+663,Skoda,Monte Carlo,Monte Carlo 1.6 Mpi At,BS IV,55 litres,Petrol,Sedan,7,Automatic
+664,Skoda,Monte Carlo,Monte Carlo 1.5 Tdi Mt,BS IV,55 litres,Diesel,Sedan,5,Manual
+665,Skoda,Monte Carlo,Monte Carlo 1.6 Mpi Mt,BS IV,55 litres,Petrol,Sedan,5,Manual
+666,Mahindra,Xuv500,G At,BS IV,70 litres,Petrol,SUV,6,Automatic
+667,Mahindra,Xuv500,W7,BS IV,70 litres,Diesel,SUV,6,Manual
+668,Mahindra,Xuv500,W7 At,BS IV,70 litres,Diesel,SUV,6,Automatic
+669,Mahindra,Xuv500,W9,BS IV,70 litres,Diesel,SUV,6,Manual
+670,Mahindra,Xuv500,W9 At,BS IV,70 litres,Diesel,SUV,6,Automatic
+671,Mahindra,Xuv500,W11,BS IV,70 litres,Diesel,SUV,6,Manual
+672,Mahindra,Xuv500,W11 At,BS IV,70 litres,Diesel,SUV,6,Automatic
+673,Mahindra,Xuv500,W11 (O),BS IV,70 litres,Diesel,SUV,6,Manual
+674,Mahindra,Xuv500,W11 (O) At,BS IV,70 litres,Diesel,SUV,6,Automatic
+675,Mahindra,Xuv500,G At,BS IV,70 litres,Petrol,SUV,6,Automatic
+676,Mahindra,Xuv500,W7,BS IV,70 litres,Diesel,SUV,6,Manual
+677,Mahindra,Xuv500,W7 At,BS IV,70 litres,Diesel,SUV,6,Automatic
+678,Mahindra,Xuv500,W9,BS IV,70 litres,Diesel,SUV,6,Manual
+679,Mahindra,Xuv500,W9 At,BS IV,70 litres,Diesel,SUV,6,Automatic
+680,Mahindra,Xuv500,W11,BS IV,70 litres,Diesel,SUV,6,Manual
+681,Mahindra,Xuv500,W11 At,BS IV,70 litres,Diesel,SUV,6,Automatic
+682,Mahindra,Xuv500,W11 (O),BS IV,70 litres,Diesel,SUV,6,Manual
+683,Mahindra,Xuv500,W11 (O) At,BS IV,70 litres,Diesel,SUV,6,Automatic
+684,Mahindra,Xuv500,W11 (O) Awd,BS IV,70 litres,Diesel,SUV,6,Manual
+685,Mahindra,Xuv500,W11 (O) Awd At,BS IV,70 litres,Diesel,SUV,6,Automatic
+686,Mahindra,Xuv500,W3,BS IV,70 litres,Diesel,SUV,6,Manual
+690,Tata,Hexa,Xm Plus 4X2,BS IV,60 litres,Diesel,SUV,6,Manual
+691,Tata,Hexa,Xt 4X4,BS IV,60 litres,Diesel,SUV,6,Manual
+692,Tata,Hexa,Xta 4X2,BS IV,60 litres,Diesel,SUV,6,Automatic
+693,Tata,Hexa,Xt 4X2,BS IV,,Diesel,SUV,6,Manual
+694,Tata,Hexa,Xe 4X2,BS IV,60 litres,Diesel,SUV,5,Manual
+695,Tata,Hexa,Xm 4X2,BS IV,60 litres,Diesel,SUV,6,Manual
+696,Tata,Hexa,Xma 4X2,BS IV,,Diesel,SUV,6,Automatic
+697,Toyota,Innova Crysta,2.4 Gx 7 Str,BS VI,55 litres,Diesel,MUV,5,Manual
+698,Toyota,Innova Crysta,2.4 Vx 7 Str,BS IV,55 litres,Diesel,MUV,5,Manual
+699,Toyota,Innova Crysta,2.4 Gx 8 Str,BS VI,55 litres,Diesel,MUV,5,Manual
+700,Toyota,Innova Crysta,2.4 Vx 8 Str,BS VI,55 litres,Diesel,MUV,5,Manual
+701,Toyota,Innova Crysta,2.4 Zx 7 Str,BS VI,55 litres,Diesel,MUV,5,Manual
+702,Toyota,Innova Crysta,2.7 Gx At 8 Str,BS VI,55 litres,Petrol,MUV,6,Automatic
+703,Toyota,Innova Crysta,2.7 Gx At 7 Str,BS VI,55 litres,Petrol,MUV,6,Automatic
+704,Toyota,Innova Crysta,2.7 Zx At 7 Str,BS IV,55 litres,Petrol,MUV,6,Automatic
+705,Toyota,Innova Crysta,2.7 Vx 7 Str,BS IV,55 litres,Petrol,MUV,5,Manual
+706,Toyota,Innova Crysta,2.7 Gx Mt 7 Str,BS VI,55 litres,Petrol,MUV,6,Manual
+707,Toyota,Innova Crysta,2.7 Gx Mt 8 Str,BS VI,55 litres,Petrol,MUV,6,Manual
+708,Toyota,Innova Crysta,Touring Sport 2.4 Vx 7 Str,BS VI,55 litres,Diesel,MUV,5,Manual
+709,Toyota,Innova Crysta,Touring Sport 2.7 Vx 7 Str,BS VI,55 litres,Petrol,MUV,5,Manual
+710,Toyota,Innova Crysta,Touring Sport 2.7 Zx At 7 Str,BS VI,55 litres,Petrol,MUV,6,Automatic
+711,Toyota,Innova Crysta,2.4 G Plus 7 Str,BS VI,55 litres,Diesel,MUV,5,Manual
+712,Toyota,Innova Crysta,2.4 G Plus 8 Str,BS VI,55 litres,Diesel,MUV,5,Manual
+718,Jeep,Compass,2.0 Longitude (O),BS 6,60 litres,Diesel,SUV,6,Manual
+723,Jeep,Compass,1.4 Limited Plus At Petrol,BS 6,60 litres,Petrol,SUV,7,Automatic
+724,Jeep,Compass,2.0 Limited Plus 4X2 Diesel,BS 6,60 litres,Diesel,SUV,6,Manual
+725,Jeep,Compass,2.0 Limited Plus 4X4 Diesel,BS 6,60 litres,Diesel,SUV,6,Manual
+729,Jeep,Compass,1.4 Limited (O) At Petrol Black Pack,BS 6,60 litres,Petrol,SUV,7,Automatic
+732,Jeep,Compass,2.0 Limited Plus 4X4 At,BS 6,60 litres,Diesel,SUV,9,Automatic
+733,Jeep,Compass,2.0 Longitude 4X4 At,BS 6,60 litres,Diesel,SUV,9,Automatic
+734,Toyota,Corolla Altis,G Petrol,BS IV,55 litres,Petrol,Sedan,6,Manual
+735,Toyota,Corolla Altis,G At Petrol,BS IV,55 litres,Petrol,Sedan,7,Automatic
+736,Toyota,Corolla Altis,Gl Petrol,BS IV,55 litres,Petrol,Sedan,6,Manual
+737,Toyota,Corolla Altis,Gl Diesel,BS IV,43 litres,Diesel,Sedan,6,Manual
+738,Toyota,Corolla Altis,G Diesel,BS IV,43 litres,Diesel,Sedan,6,Manual
+739,Toyota,Corolla Altis,Vl At Petrol,BS IV,55 litres,Petrol,Sedan,6,Automatic
+740,Honda,Civic,1.8 V Cvt,BS 6,47 litres,Petrol,Sedan,7,Automatic
+741,Honda,Civic,1.8 Vx Cvt,BS 6,47 litres,Petrol,Sedan,7,Automatic
+742,Honda,Civic,1.8 Zx Cvt,BS 6,47 litres,Petrol,Sedan,7,Automatic
+743,Honda,Civic,1.6 Vx Mt,BS 6,47 litres,Diesel,Sedan,6,Manual
+744,Honda,Civic,1.6 Zx Mt,BS 6,47 litres,Diesel,Sedan,6,Manual
+747,Kia,Carnival,Premium 7 Str,BS 6,,Diesel,MUV,8,Automatic
+748,Kia,Carnival,Premium 8 Str,BS 6,,Diesel,MUV,8,Automatic
+749,Kia,Carnival,Prestige 7 Str,BS 6,,Diesel,MUV,8,Automatic
+750,Kia,Carnival,Prestige 9 (6+3) Str,BS 6,,Diesel,MUV,8,Automatic
+751,Kia,Carnival,Limousine 7 Str,BS 6,,Diesel,MUV,8,Automatic
+752,Skoda,Superb,Style 1.8 Tsi Mt,BS IV,66 litres,Petrol,Sedan,6,Manual
+753,Skoda,Superb,Style 1.8 Tsi At,BS IV,66 litres,Petrol,Sedan,7,Automatic
+754,Skoda,Superb,L & K 1.8 Tsi At,BS IV,66 litres,Petrol,Sedan,7,Automatic
+755,Skoda,Superb,L & K 2.0 Tdi At,BS IV,66 litres,Diesel,Sedan,6,Automatic
+756,Skoda,Superb,Style 2.0 Tdi At,BS IV,66 litres,Diesel,Sedan,6,Automatic
+757,Skoda,Superb,Corporate Edition 1.8 Tsi At,BS IV,66 litres,Petrol,Sedan,7,Automatic
+758,Skoda,Superb,Corporate Edition 2.0 Tdi At,BS IV,66 litres,Diesel,Sedan,6,Automatic
+759,Volvo,V40,Kinetic,BS IV,60 litres,Diesel,Hatchback,6,Automatic
+760,Volvo,V40,R Design,BS IV,60 litres,Diesel,Hatchback,6,Automatic
+761,Toyota,Fortuner,2.8 4X2 At,BS IV,80 litres,Diesel,SUV,5,Automatic
+762,Toyota,Fortuner,2.8 4X2 Mt,BS IV,80 litres,Diesel,SUV,5,Manual
+763,Toyota,Fortuner,2.8 4X4 Mt,BS IV,80 litres,Diesel,SUV,5,Manual
+764,Toyota,Fortuner,2.8 4X4 At,BS IV,80 litres,Diesel,SUV,5,Automatic
+765,Toyota,Fortuner,2.7 4X2 At,BS IV,80 litres,Petrol,SUV,5,Automatic
+766,Toyota,Fortuner,2.7 4X2 Mt,BS IV,80 litres,Petrol,SUV,5,Manual
+767,Toyota,Fortuner,Trd Celebratory Edition,BS IV,80 litres,Diesel,SUV,6,Automatic
+768,Ford,Endeavour,3.2L 4X4 At Titanium Plus,BS IV,80 litres,Diesel,SUV,6,Automatic
+769,Ford,Endeavour,2.2L 4X2 At Titanium Plus,BS IV,80 litres,Diesel,SUV,6,Automatic
+770,Ford,Endeavour,2.2L 4X2 Mt Titanium,BS IV,80 litres,Diesel,SUV,6,Manual
+771,Mini,Cooper 3 Door,Cooper D,BS IV,44 litres,Diesel,Hatchback,6,Automatic
+772,Mini,Cooper 3 Door,Cooper S,BS IV,44 litres,Petrol,Hatchback,6,Automatic
+773,Skoda,Kodiaq Scout,2.0 Tdi At,BS 6,63 litres,Diesel,SUV,7,Automatic
+774,Bmw,X1,Sdrive20D Expedition,BS IV,51 litres,Diesel,SUV,8,Automatic
+775,Bmw,X1,Sdrive20D Xline,BS IV,51 litres,Diesel,SUV,8,Automatic
+776,Bmw,X1,Xdrive20D M Sport,BS IV,51 litres,Diesel,SUV,8,Automatic
+777,Bmw,X1,Sdrive20D M Sport,BS IV,61 litres,Diesel,SUV,8,Automatic
+778,Bmw,X1,Sdrive20I Xline,BS 6,51 litres,Petrol,SUV,7,Automatic
+779,Volvo,S60,Polestar,BS IV,67 litres,Petrol,Sedan,8,Automatic
+780,Volvo,S60,Momentum,BS IV,67.5 litres,Diesel,Sedan,8,Automatic
+781,Bmw,3-Series,320D Sport,BS 6,40 litres,Diesel,Sedan,8,Automatic
+782,Bmw,3-Series,320D Luxury Line,BS 6,40 litres,Diesel,Sedan,8,Automatic
+783,Bmw,3-Series,330I M Sport,BS 6,59 litres,Petrol,Sedan,8,Automatic
+784,Volvo,S60 Cross Country,D4,BS IV,67 litres,Diesel,Sedan,6,Automatic
+785,Audi,Q5,35 Tdi Premium Plus,BS IV,64 litres,Diesel,SUV,7,Automatic
+786,Audi,Q5,35 Tdi Technology,BS IV,64 litres,Diesel,SUV,7,Automatic
+787,Audi,Q5,45 Tfsi Premium Plus,BS IV,70 litres,Petrol,SUV,7,Automatic
+788,Audi,Q5,45 Tfsi Technology,BS IV,70 litres,Petrol,SUV,7,Automatic
+789,Land Rover Rover,Range Evoque,S,BS 6,,Diesel,SUV,9,Automatic
+790,Land Rover Rover,Range Evoque,Se R-Dynamic,BS 6,,Diesel,SUV,9,Automatic
+791,Land Rover Rover,Range Evoque,S Petrol,BS 6,,Petrol,SUV,9,Automatic
+792,Land Rover Rover,Range Evoque,Se R-Dynamic Petrol,BS 6,,Petrol,SUV,9,Automatic
+796,,Mercedes-Benz E-Class,E 63 S Amg,BS IV,80 litres,Petrol,Sedan,7,Automatic
+801,Volvo,Xc60,Inscription D5,BS IV,70 litres,Diesel,SUV,6,Automatic
+802,Bmw,X4,Xdrive20D M Sport X,BS 6,60 litres,Diesel,SUV,8,Automatic
+803,Bmw,X4,Xdrive30D M Sport X,BS 6,68 litres,Diesel,SUV,8,Automatic
+804,Bmw,X4,Xdrive30I M Sport X,BS 6,68 litres,Petrol,SUV,8,Automatic
+805,Jeep,Wrangler,Unlimited,BS 6,85 litres,Petrol,SUV,8,Automatic
+806,,Mercedes-Benz C-Class Cabriolet,C300,BS 6,60 litres,Petrol,Convertible,9,Automatic
+807,Bmw,Z4 Roadster,Sdrive 20I,BS 6,52 litres,Petrol,Sports,8,Automatic
+808,Bmw,Z4 Roadster,M 40I,BS 6,52 litres,Petrol,Sports,8,Automatic
+809,,Mercedes-Benz V-Class,Expression Elwb,BS 6,93 litres,Diesel,MUV,7,Automatic
+810,,Mercedes-Benz V-Class,Exclusive Lwb,BS 6,93 litres,Diesel,MUV,7,Automatic
+811,,Mercedes-Benz V-Class,Elite,BS 6,70 litres,Diesel,MPV,9,Automatic
+812,Audi,Q7,45 Tdi Premium Plus,BS IV,75 litres,Diesel,SUV,8,Automatic
+813,Audi,Q7,45 Tdi Technology Pack,BS IV,75 litres,Diesel,SUV,8,Automatic
+814,Audi,Q7,40 Tfsi Quattro Premium Plus,BS IV,75 litres,Petrol,SUV,8,Automatic
+815,Audi,Q7,40 Tfsi Quattro Technology Pack,BS IV,75 litres,Petrol,SUV,8,Automatic
+816,Audi,Q7,45 Tdi Black Styling,BS IV,75 litres,Diesel,SUV,8,Automatic
+817,Audi,Q7,40 Tfsi Quattro Black Styling,BS IV,75 litres,Petrol,SUV,8,Automatic
+818,Land Rover Rover,Range Evoque Convertible,2.0 Hse Dynamic,BS IV,,Petrol,Convertible,9,Automatic
+819,Land Rover Rover,Range Velar,2.0 Diesel R-Dynamic S,BS IV,,Diesel,SUV,9,Automatic
+820,Land Rover Rover,Range Velar,2.0 Petrol R-Dynamic S,BS IV,65 litres,Petrol,SUV,9,Automatic
+822,Volvo,Xc90,D5 Inscription,BS IV,68 litres,Diesel,SUV,8,Automatic
+823,Volvo,Xc90,D5 Momentum,BS IV,68 litres,Diesel,SUV,8,Automatic
+824,Volvo,Xc90,T8 Excellence,BS IV,68 litres,Hybrid,SUV,8,Automatic
+825,Volvo,Xc90,T8 Inscription,BS IV,68 litres,Hybrid,SUV,8,Automatic
+826,Volvo,Xc90,D5 R-Design,BS IV,68 litres,Diesel,SUV,8,Automatic
+828,Land Rover Rover,Range Sport,2.0L S Petrol,BS IV,105 litres,Petrol,SUV,8,Automatic
+829,Land Rover Rover,Range Sport,2.0L Se Petrol,BS IV,105 litres,Petrol,SUV,8,Automatic
+830,Land Rover Rover,Range Sport,3.0L V6 Se Petrol,BS IV,85 litres,Petrol,SUV,8,Automatic
+831,Land Rover Rover,Range Sport,2.0L Hse Petrol,BS IV,105 litres,Petrol,SUV,8,Automatic
+832,Land Rover Rover,Range Sport,3.0L V6 Hse Petrol,BS IV,85 litres,Petrol,SUV,8,Automatic
+834,Land Rover Rover,Range Sport,3.0L Tdv6 S Diesel,BS IV,80 litres,Diesel,SUV,8,Automatic
+835,Land Rover Rover,Range Sport,3.0L Tdv6 Se Diesel,BS IV,80 litres,Diesel,SUV,8,Automatic
+836,Land Rover Rover,Range Sport,4.4L Sdv8 Hse Diesel,BS IV,105 litres,Diesel,SUV,8,Automatic
+837,Jaguar,Xj,3.0L,BS IV,82 litres,Diesel,Sedan,8,Automatic
+838,Jaguar,Xj,3.0L Portfolio,BS IV,83 litres,Diesel,Sedan,8,Automatic
+839,Jaguar,Xj,50,BS IV,82 litres,Diesel,Sedan,8,Automatic
+840,Porsche,Cayenne,E-Hybrid,BS 6,75 litres,Hybrid,SUV,8,Automatic
+841,Porsche,Cayenne,Turbo,BS 6,90 litres,Petrol,SUV,8,Automatic
+842,Porsche,Cayenne,Base,BS 6,75 litres,Petrol,SUV,8,Automatic
+843,Maserati,Ghibli,Diesel,BS IV,70 litres,Diesel,Sedan,8,Automatic
+844,Maserati,Ghibli,Gransport,BS IV,70 litres,Diesel,Sedan,8,Automatic
+845,Maserati,Ghibli,Granlusso,BS IV,70 litres,Diesel,Sedan,8,Automatic
+846,Toyota,Land Cruiser,Vx,BS IV,93 litres,Diesel,SUV,6,Automatic
+847,Audi,Rs7,Sportback,BS IV,75 litres,Petrol,Sedan,8,Automatic
+848,Land Rover Rover,Range,5.0L V8 Autobiography Petrol,BS IV,105 litres,Petrol,SUV,8,Automatic
+849,Land Rover Rover,Range,5.0L V8 Svautobiography Dynamic Petrol,BS IV,105 litres,Petrol,SUV,8,Automatic
+850,Land Rover Rover,Range,3.0L V6 Vogue Lwb Petrol,BS IV,85 litres,Petrol,SUV,8,Automatic
+852,Land Rover Rover,Range,3.0L Tdv6 Vogue Diesel,BS IV,,Diesel,SUV,8,Automatic
+853,Land Rover Rover,Range,3.0L Tdv6 Vogue Lwb Diesel,BS IV,,Diesel,SUV,8,Automatic
+854,Land Rover Rover,Range,4.4L Sdv8 Autobiography Lwb Diesel,BS IV,,Diesel,SUV,8,Automatic
+855,Land Rover Rover,Range,4.4L Sdv8 Svautobiography Lwb Diesel,BS IV,,Diesel,SUV,8,Automatic
+856,Land Rover Rover,Range,4.4L Sdv8 Vogue Se Lwb Diesel,BS IV,,Diesel,SUV,8,Automatic
+857,Land Rover Rover,Range,3.0L V6 Vogue Se Lwb Petrol,BS IV,85 litres,Petrol,SUV,8,Automatic
+858,Maserati,Grancabrio,Standard,BS IV,75 litres,Petrol,Convertible,6,Automatic
+859,,Mercedes-Benz Amg-Gt,S,BS IV,75 litres,Petrol,Coupe,7,Automatic
+860,,Mercedes-Benz Amg-Gt,R,BS IV,75 litres,Petrol,Coupe,7,Automatic
+861,,Mercedes-Benz Amg-Gt,Roadster,BS IV,75 litres,Petrol,Coupe,7,Automatic
+862,,Mercedes-Benz Amg Gt 4-Door Coupe,63 S 4Matic+,BS 6,65 litres,Petrol,Coupe,7,Automatic
+863,Lamborghini,Huracan,Lp 610-4,BS IV,90 litres,Petrol,Coupe,7,Automatic
+864,Lamborghini,Huracan,Lp 580-2,BS IV,90 litres,Petrol,Coupe,7,Automatic
+865,Lamborghini,Huracan,Avio,BS IV,90 litres,Petrol,Coupe,7,Automatic
+866,Lamborghini,Huracan,Performante,BS IV,90 litres,Petrol,Coupe,7,Automatic
+867,Lamborghini,Huracan,Lp 580-2 Spyder,BS IV,90 litres,Petrol,Coupe,7,Automatic
+868,Lamborghini,Huracan,Lp 610-4 Spyder,BS IV,90 litres,Petrol,Coupe,7,Automatic
+869,Lamborghini,Huracan,Evo,BS IV,90 litres,Petrol,Coupe,7,Automatic
+870,Lamborghini,Huracan,Evo Spyder,BS IV,,Petrol,Convertible,7,Automatic
+871,Lamborghini,Huracan,Evo Rwd,BS 6,90 litres,Petrol,Coupe,7,Automatic
+872,Ferrari,488 Gtb,Std,BS IV,78 litres,Petrol,Coupe,7,Automatic
+873,Ferrari,488 Gtb,Spider,BS IV,78 litres,Petrol,Coupe,7,Automatic
+874,Ferrari,Gtc4 Lusso,V8 T,BS IV,91 litres,Petrol,Coupe,7,Automatic
+875,Ferrari,Gtc4 Lusso,V12,BS IV,91 litres,Petrol,Coupe,7,Automatic
+876,Lamborghini,Aventador,Lp 700-4,BS IV,90 litres,Petrol,Convertible,7,Automatic
+877,Lamborghini,Aventador,Lp700-4 Roadster,BS IV,90 litres,Petrol,Convertible,7,Automatic
+878,Lamborghini,Aventador,S,BS IV,90 litres,Petrol,Coupe,7,Automatic
+879,,Rolls-Royce Dawn,Convertible,BS IV,80 litres,Petrol,Convertible,8,Automatic
+880,,Rolls-Royce Drophead Coupe,Phantom,BS IV,100 litres,Petrol,Convertible,8,Automatic
+881,Maruti Suzuki,Omni,5 Str Bs-Iv,BS IV,35 litres,Petrol,MPV,4,Manual
+882,Maruti Suzuki,Omni,E 8 Str Bs-Iv,BS IV,36 litres,Petrol,MPV,4,Manual
+883,,Go+,Datsun D,BS IV,35 litres,Petrol,MPV,5,Manual
+884,,Go+,Datsun T,BS IV,35 litres,Petrol,MPV,5,Manual
+885,,Go+,Datsun T (O),BS IV,35 litres,Petrol,MPV,5,Manual
+886,,Go+,Datsun A (O),BS IV,35 litres,Petrol,MPV,5,Manual
+887,,Go+,Datsun A,BS IV,35 litres,Petrol,MPV,5,Manual
+888,,Go+,Datsun T Vdc,BS IV,35 litres,Petrol,MPV,5,Manual
+889,,Go+,Datsun T (O) Vdc,BS IV,35 litres,Petrol,MPV,5,Manual
+890,,Go+,Datsun T Cvt,BS IV,35 litres,Petrol,MPV,5,Manual
+891,,Go+,Datsun T (O) Cvt,BS IV,35 litres,Petrol,MPV,5,Manual
+892,Fiat,Punto Evo Pure,1.2L Fire Dynamic,BS IV,45 litres,Petrol,Hatchback,5,Manual
+893,Fiat,Punto Evo Pure,1.3,BS IV,45 litres,Diesel,Hatchback,5,Manual
+894,Ford,Figo,Ambiente 1.2 Ti-Vct,BS IV,42 litres,Petrol,Hatchback,5,Manual
+895,Ford,Figo,Ambiente 1.5 Tdci,BS IV,40 litres,Diesel,Hatchback,5,Manual
+896,Ford,Figo,Titanium 1.2 Ti-Vct,BS IV,42 litres,Petrol,Hatchback,5,Manual
+897,Ford,Figo,Titanium1.5 Tdci,BS IV,40 litres,Diesel,Hatchback,5,Manual
+898,Ford,Figo,Titanium Blu 1.2 Ti-Vct,BS IV,42 litres,Petrol,Hatchback,5,Manual
+899,Ford,Figo,Titanium Blu 1.5 Tdci,BS IV,40 litres,Diesel,Hatchback,5,Manual
+900,Maruti Suzuki,Baleno,1.3 Delta,BS IV,37 litres,Diesel,Hatchback,5,Manual
+901,Maruti Suzuki,Baleno,1.3 Alpha,BS IV,37 litres,Diesel,Hatchback,5,Manual
+902,Maruti Suzuki,Baleno,1.3 Sigma,BS IV,37 litres,Diesel,Hatchback,5,Manual
+903,Maruti Suzuki,Baleno,1.3 Zeta,BS IV,37 litres,Diesel,Hatchback,5,Manual
+904,Maruti Suzuki,Baleno,1.2 Alpha,BS 6,37 litres,Petrol,Hatchback,5,Manual
+905,Maruti Suzuki,Baleno,1.2 Alpha Cvt,BS 6,37 litres,Petrol,Hatchback,5,Automatic
+906,Maruti Suzuki,Baleno,1.2 Delta,BS 6,37 litres,Petrol,Hatchback,5,Manual
+907,Maruti Suzuki,Baleno,1.2 Delta Cvt,BS 6,37 litres,Petrol,Hatchback,5,Automatic
+908,Maruti Suzuki,Baleno,1.2 Sigma,BS 6,37 litres,Petrol,Hatchback,5,Manual
+909,Maruti Suzuki,Baleno,1.2 Zeta,BS 6,37 litres,Petrol,Hatchback,5,Manual
+910,Maruti Suzuki,Baleno,1.2 Delta Dualjet,BS 6,37 litres,Petrol,Hatchback,5,Manual
+911,Maruti Suzuki,Baleno,1.2 Zeta Dualjet,BS 6,37 litres,Petrol,Hatchback,5,Manual
+912,Maruti Suzuki,Baleno,1.2 Zeta Cvt,BS 6,37 litres,Petrol,Hatchback,5,Automatic
+913,Hyundai,Grand I10,1.2 Kappa Vtvt Magna,BS IV,43 litres,Petrol,Hatchback,5,Manual
+914,Hyundai,Grand I10,1.2 Kappa Vtvt Sportz,BS IV,43 litres,Petrol,Hatchback,5,Manual
+915,Hyundai,Grand I10,1.2 Kappa Vtvt Magna At,BS IV,43 litres,Petrol,Hatchback,5,Automatic
+916,Hyundai,Grand I10,1.2 Kappa Vtvt Sportz At,BS IV,43 litres,Petrol,Hatchback,5,Automatic
+917,Hyundai,Grand I10,1.2 Kappa Vtvt Sportz Dual Tone,BS IV,43 litres,Petrol,Hatchback,5,Manual
+918,Hyundai,Grand I10,1.2 Kappa Vtvt Magna Cng,BS IV,43 litres,CNG,Hatchback,5,Manual
+919,Fiat,Linea Classic,1.3 Multijet,BS IV,45 litres,Diesel,Sedan,5,Manual
+920,Fiat,Linea Classic,1.4,BS IV,45 litres,Petrol,Sedan,5,Manual
+921,Fiat,Linea Classic,Plus 1.3 Multijet,BS IV,45 litres,Diesel,Sedan,5,Manual
+922,Nissan,Sunny,Xe Petrol,BS IV,41 litres,Petrol,Sedan,5,Manual
+923,Nissan,Sunny,Xl Petrol,BS IV,41 litres,Petrol,Sedan,5,Manual
+924,Nissan,Sunny,Xl Diesel,BS IV,41 litres,Diesel,Sedan,5,Manual
+925,Nissan,Sunny,Xv Diesel,BS IV,41 litres,Diesel,Sedan,5,Manual
+926,Nissan,Sunny,Xe Diesel,BS IV,41 litres,Diesel,Sedan,5,Manual
+927,Nissan,Sunny,Xv Cvt,BS IV,41 litres,Petrol,Sedan,5,Automatic
+928,Nissan,Sunny,Special Edition Diesel,BS IV,41 litres,Diesel,Sedan,5,Manual
+929,Maruti Suzuki,Ertiga,Lxi,BS 6,45 litres,Petrol,MPV,5,Manual
+930,Maruti Suzuki,Ertiga,Zxi,BS 6,45 litres,Petrol,MPV,5,Manual
+931,Maruti Suzuki,Ertiga,Vxi At,BS 6,45 litres,Petrol,MUV,4,Automatic
+932,Maruti Suzuki,Ertiga,Zxi Plus,BS 6,45 litres,Petrol,MUV,5,Manual
+933,Maruti Suzuki,Ertiga,Vxi,BS 6,45 litres,Petrol,MUV,5,Manual
+934,Maruti Suzuki,Ertiga,Zxi At,BS 6,45 litres,Petrol,MPV,4,Automatic
+935,Maruti Suzuki,Ertiga,1.5L Vdi,BS IV,45 litres,Diesel,MPV,6,Manual
+936,Maruti Suzuki,Ertiga,1.5L Zdi,BS IV,45 litres,Diesel,MPV,6,Manual
+937,Maruti Suzuki,Ertiga,1.5L Zdi Plus,BS IV,45 litres,Diesel,MPV,6,Manual
+938,Maruti Suzuki,Ertiga,Vxi Cng (Cng +,BS 6,45 litres,CNG + Petrol,MUV,5,Manual
+939,Maruti Suzuki,Baleno Rs,Rs 1.0,BS IV,37 litres,Petrol,Hatchback,5,Manual
+940,Honda,Wr-V,Vx Diesel,BS IV,40 litres,Diesel,SUV,7,Manual
+941,Honda,Wr-V,Vx Petrol,BS IV,40 litres,Petrol,SUV,7,Manual
+942,Honda,Wr-V,S Diesel,BS IV,40 litres,Diesel,SUV,7,Manual
+943,Honda,Wr-V,S Petrol,BS IV,40 litres,Petrol,SUV,7,Manual
+944,Honda,Wr-V,Edge Plus Edition Diesel,BS IV,40 litres,Diesel,SUV,7,Manual
+945,Honda,Wr-V,Edge Plus Edition Petrol,BS IV,40 litres,Petrol,SUV,7,Manual
+946,Honda,Wr-V,Exclusive Edition Diesel,BS IV,40 litres,Diesel,SUV,7,Manual
+947,Honda,Wr-V,Exclusive Edition Petrol,BS IV,40 litres,Petrol,SUV,7,Manual
+948,Honda,Wr-V,V Diesel,BS IV,40 litres,Diesel,SUV,7,Manual
+949,Mahindra,Tuv300,T4 Plus,BS IV,60 litres,Diesel,SUV,5,Manual
+950,Mahindra,Tuv300,T6 Plus,BS IV,60 litres,Diesel,SUV,5,Manual
+951,Mahindra,Tuv300,T8,BS IV,60 litres,Diesel,SUV,5,Manual
+952,Mahindra,Tuv300,T10,BS IV,60 litres,Diesel,SUV,5,Manual
+953,Mahindra,Tuv300,T10 (O),BS IV,60 litres,Diesel,SUV,5,Manual
+954,Mahindra,Tuv300,T10 Dual Tone,BS IV,60 litres,Diesel,SUV,5,Manual
+955,Mahindra,Tuv300,T10 (O) Dual Tone,BS IV,60 litres,Diesel,SUV,5,Manual
+956,Maruti Suzuki,S-Cross,1.3L Sigma,BS IV,48 litres,Diesel,Crossover,5,Manual
+957,Maruti Suzuki,S-Cross,1.3L Delta,BS IV,48 litres,Diesel,Crossover,5,Manual
+958,Maruti Suzuki,S-Cross,1.3L Zeta,BS IV,48 litres,Diesel,Crossover,5,Manual
+959,Maruti Suzuki,S-Cross,1.3L Alpha,BS IV,48 litres,Diesel,Crossover,5,Manual
+960,Renault,Captur,Rxe Petrol,BS IV,50 litres,Petrol,SUV,5,Manual
+961,Renault,Captur,Rxe Diesel,BS IV,50 litres,Diesel,SUV,6,Manual
+962,Renault,Captur,Platine Diesel Dual Tone,BS IV,50 litres,Diesel,SUV,6,Manual
+963,Renault,Captur,Platine Petrol Dual Tone,BS IV,50 litres,Petrol,SUV,5,Manual
+964,Mahindra,Xylo,D2 Bs-Iv,BS IV,55 litres,Diesel,SUV,5,Manual
+965,Mahindra,Xylo,D4 Bs-Iv,BS IV,55 litres,Diesel,SUV,5,Manual
+966,Mahindra,Xylo,H4 Bs-Iv,BS IV,55 litres,Diesel,SUV,5,Manual
+967,Mahindra,Xylo,H4 Abs Bs-Iv,BS IV,55 litres,Diesel,SUV,5,Manual
+968,Mahindra,Xylo,H8 Abs Airbags Bs-Iv,BS IV,55 litres,Diesel,SUV,5,Manual
+969,Kia,Seltos,Hte 1.5,BS 6,60 litres,Petrol,SUV,6,Manual
+970,Kia,Seltos,Htk 1.5,BS 6,60 litres,Petrol,SUV,6,Manual
+971,Kia,Seltos,Htk Plus 1.5,BS 6,60 litres,Petrol,SUV,6,Manual
+972,Kia,Seltos,Htx 1.5,BS 6,60 litres,Petrol,SUV,6,Manual
+973,Kia,Seltos,Htx Cvt 1.5,BS 6,60 litres,Petrol,SUV,6,Automatic
+974,Kia,Seltos,Hte 1.5 Diesel,BS 6,60 litres,Diesel,SUV,6,Manual
+975,Kia,Seltos,Htk 1.5 Diesel,BS 6,60 litres,Diesel,SUV,6,Manual
+976,Kia,Seltos,Htk Plus 1.5 Diesel,BS 6,60 litres,Diesel,SUV,6,Manual
+977,Kia,Seltos,Htk Plus At 1.5 Diesel,BS 6,60 litres,Diesel,SUV,6,Automatic
+978,Kia,Seltos,Htx Plus 1.5 Diesel,BS 6,60 litres,Diesel,SUV,6,Manual
+979,Kia,Seltos,Htx Plus At 1.5 Diesel,BS 6,60 litres,Diesel,SUV,6,Automatic
+980,Kia,Seltos,Gtk 1.4,BS 6,50 litres,Petrol,SUV,6,Manual
+981,Kia,Seltos,Gtx 1.4,BS 6,50 litres,Petrol,SUV,6,Manual
+982,Kia,Seltos,Gtx At 1.4,BS 6,50 litres,Petrol,SUV,7,DCT
+983,Kia,Seltos,Gtx Plus 1.4,BS 6,50 litres,Petrol,SUV,6,Manual
+984,Kia,Seltos,Htx 1.5 Diesel,BS 6,60 litres,Diesel,SUV,6,Manual
+985,Nissan,Terrano,Xe D 85Ps,BS IV,50 litres,Diesel,SUV,5,Manual
+986,Nissan,Terrano,Xv D Premium 110 Ps Amt,BS IV,50 litres,Diesel,SUV,6,Automatic
+987,Nissan,Terrano,Xl (P),BS IV,50 litres,Petrol,SUV,5,Manual
+988,Nissan,Terrano,Xl D(O),BS IV,50 litres,Diesel,SUV,5,Manual
+989,Nissan,Terrano,Xv D Premium 110 Ps,BS IV,50 litres,Diesel,SUV,6,Manual
+990,Nissan,Terrano,Sport Edition,BS IV,50 litres,Diesel,SUV,5,Manual
+991,Tata,Safari Storme,2.2 Lx 4X2,BS IV,63 litres,Diesel,SUV,5,Manual
+992,Tata,Safari Storme,2.2 Ex 4X2,BS IV,63 litres,Diesel,SUV,5,Manual
+993,Tata,Safari Storme,2.2 Vx 4X2 Varicor 400,BS IV,63 litres,Diesel,SUV,6,Manual
+994,Tata,Safari Storme,2.2 Vx 4X4 Varicor 400,BS IV,63 litres,Diesel,SUV,6,Manual
+995,Mg,Hector,1.5L Style,BS IV,,Petrol,SUV,6,Manual
+996,Mg,Hector,2.0L Style,BS IV,,Diesel,SUV,6,Manual
+997,Mg,Hector,2.0L Super,BS IV,,Diesel,SUV,6,Manual
+998,Mg,Hector,2.0L Smart,BS IV,,Diesel,SUV,6,Manual
+999,Mg,Hector,2.0L Sharp,BS IV,,Diesel,SUV,6,Manual
+1000,Mg,Hector,1.5L Super,BS IV,,Petrol,SUV,6,Manual
+1001,Mg,Hector,1.5L Super Hybrid,BS IV,,Hybrid,SUV,6,Manual
+1002,Mg,Hector,1.5L Sharp Hybrid,BS IV,,Hybrid,SUV,6,Manual
+1003,Mg,Hector,1.5L Smart Hybrid,BS IV,,Hybrid,SUV,6,Manual
+1004,Mg,Hector,1.5L Smart Dct,BS IV,,Petrol,SUV,6,DCT
+1005,Mg,Hector,1.5L Sharp Dct,BS IV,,Petrol,SUV,6,DCT
+1009,Hyundai,Elantra,S,BS 6,50 litres,Petrol,Sedan,6,Manual
+1010,Hyundai,Elantra,Sx,BS 6,50 litres,Petrol,Sedan,6,Manual
+1011,Hyundai,Elantra,Sx At,BS 6,50 litres,Petrol,Sedan,6,AMT
+1012,Hyundai,Elantra,Sx(O) At,BS 6,50 litres,Petrol,Sedan,6,AMT
+1013,Hyundai,Tucson,2Wd Mt Diesel,BS IV,62 litres,Diesel,SUV,5,Manual
+1014,Hyundai,Tucson,2Wd Mt Petrol,BS IV,62 litres,Petrol,SUV,5,Manual
+1015,Hyundai,Tucson,2Wd At Gl Diesel,BS IV,62 litres,Diesel,SUV,5,Automatic
+1016,Hyundai,Tucson,2Wd At Gl Petrol,BS IV,62 litres,Petrol,SUV,5,Automatic
+1017,Hyundai,Tucson,4Wd At Gls Diesel,BS IV,62 litres,Diesel,SUV,5,Automatic
+1018,Hyundai,Tucson,2Wd At Gls Petrol,BS IV,62 litres,Petrol,SUV,5,Automatic
+1019,Hyundai,Tucson,2Wd At Gl(O) Petrol,BS IV,62 litres,Petrol,SUV,5,Automatic
+1020,Hyundai,Tucson,2Wd At Gl(O) Diesel,BS IV,62 litres,Diesel,SUV,5,Automatic
+1021,Volkswagen,Passat,2.0 Tdi Comfortline,BS IV,55 litres,Diesel,Sedan,7,Automatic
+1022,Volkswagen,Passat,2.0 Tdi Highline,BS IV,66 litres,Diesel,Sedan,7,Automatic
+1023,Volkswagen,Passat,2.0 Tdi Comfortline Connect,BS IV,55 litres,Diesel,Sedan,7,Automatic
+1024,Volkswagen,Passat,2.0 Tdi Highline Connect,BS IV,66 litres,Diesel,Sedan,7,Automatic
+1025,,Mercedes-Benz A-Class,180,BS IV,50 litres,Petrol,Hatchback,7,Automatic
+1026,,Mercedes-Benz A-Class,200D,BS IV,50 litres,Diesel,Hatchback,7,Automatic
+1027,Volvo,V40 Cross Country,D3,BS IV,60 litres,Diesel,Hatchback,6,Automatic
+1028,Volvo,V40 Cross Country,T4,BS IV,50 litres,Petrol,Hatchback,6,Automatic
+1029,Mini,Countryman,Cooper S,BS IV,47 litres,Petrol,Hatchback,8,Automatic
+1030,Mini,Countryman,Cooper Sd,BS IV,47 litres,Diesel,Hatchback,8,Automatic
+1031,Mini,Countryman,Cooper S Jcw Inspired,BS IV,47 litres,Petrol,Hatchback,8,Automatic
+1032,Mini,Countryman,Black Edition,BS IV,47 litres,Petrol,Hatchback,8,Automatic
+1033,,Mercedes-Benz C-Class,C 220D Prime,BS 6,66 litres,Diesel,Sedan,9,Automatic
+1034,,Mercedes-Benz C-Class,C 220D Progressive,BS 6,66 litres,Diesel,Sedan,9,Automatic
+1035,,Mercedes-Benz C-Class,C 300D Amg Line,BS 6,66 litres,Diesel,Sedan,9,Automatic
+1036,,Mercedes-Benz C-Class,C 43 Amg,BS 6,66 litres,Petrol,Coupe,7,Automatic
+1037,,Mercedes-Benz C-Class,C 200 Prime,BS 6,66 litres,Petrol,Sedan,9,Automatic
+1038,,Mercedes-Benz C-Class,C 200 Progressive,BS 6,66 litres,Petrol,Sedan,9,Automatic
+1039,Toyota,Prius,Z8,BS IV,43 litres,Hybrid,Sedan,5,Automatic
+1045,Volvo,V90 Cross Country,D5 Inscription,BS IV,60 litres,Diesel,SUV,8,Automatic
+1046,Audi,A5 Cabriolet,2.0 Tdi,BS IV,58 litres,Diesel,Convertible,7,Automatic
+1047,,Mercedes-Benz Gle,300D 4Matic,BS 6,93 litres,Diesel,SUV,9,Automatic
+1048,,Mercedes-Benz Gle,400D 4Matic Hip Hop Edition,BS 6,93 litres,Diesel,SUV,9,Automatic
+1049,,Mercedes-Benz Cls,300D,BS 6,,Diesel,Sedan,9,Automatic
+1050,Bmw,X7,Xdrive 40I,BS 6,80 litres,Petrol,SUV,8,Automatic
+1051,Bmw,X7,Xdrive30D Dpe Signature,BS 6,80 litres,Diesel,SUV,8,Automatic
+1052,Bmw,M4,Coupe,BS IV,60 litres,Petrol,Coupe,7,Automatic
+1053,Porsche,911,Carrera S,BS 6,64 litres,Petrol,Coupe,8,Automatic
+1054,Porsche,911,Carrera S Cabriolet,BS 6,64 litres,Petrol,Convertible,8,Automatic
+1055,Nissan,Gtr,3.8 V6,BS IV,74 litres,Petrol,Coupe,6,Automatic
+1056,Aston Martin,Vantage,Coupe,BS IV,73 litres,Petrol,Coupe,8,Automatic
+1057,Aston Martin,Rapide,Luxe,BS IV,90.5 litres,Petrol,Sedan,8,Automatic
+1058,Ferrari,812 Superfast,Superfast,BS IV,92 litres,Petrol,Coupe,7,Automatic
+1059,Maruti Suzuki,Alto 800 Tour,H1,BS IV,35 litres,Petrol,Hatchback,5,Manual
+1060,Maruti Suzuki,Alto 800 Tour,H1 (O),BS IV,35 litres,Petrol,Hatchback,5,Manual
+1061,Hyundai,Grand I10 Nios,Magna 1.2 Crdi,BS 6,37 litres,Diesel,Hatchback,5,Manual
+1062,Hyundai,Grand I10 Nios,Era 1.2 Vtvt,BS 6,37 litres,Petrol,Hatchback,5,Manual
+1063,Hyundai,Grand I10 Nios,Magna 1.2 Vtvt,BS 6,37 litres,Petrol,Hatchback,5,Manual
+1064,Hyundai,Grand I10 Nios,Magna Amt 1.2 Vtvt,BS 6,37 litres,Petrol,Hatchback,5,Automatic
+1065,Hyundai,Grand I10 Nios,Sportz 1.2 Vtvt,BS 6,37 litres,Petrol,Hatchback,5,Manual
+1066,Hyundai,Grand I10 Nios,Sportz Amt 1.2 Vtvt,BS 6,37 litres,Petrol,Hatchback,5,Automatic
+1067,Hyundai,Grand I10 Nios,Sportz Dual Tone 1.2 Vtvt,BS 6,37 litres,Petrol,Hatchback,5,Manual
+1068,Hyundai,Grand I10 Nios,Asta 1.2 Vtvt,BS 6,37 litres,Petrol,Hatchback,5,Manual
+1069,Hyundai,Grand I10 Nios,Sportz Amt 1.2 Crdi,BS 6,37 litres,Diesel,Hatchback,5,Automatic
+1070,Hyundai,Grand I10 Nios,Asta 1.2 Crdi,BS 6,37 litres,Diesel,Hatchback,5,Manual
+1071,Hyundai,Xcent,S 1.2,BS IV,43 litres,Petrol,Sedan,5,Manual
+1072,Hyundai,Xcent,S At 1.2,BS IV,43 litres,Petrol,Sedan,4,Automatic
+1073,Hyundai,Xcent,Sx 1.2,BS IV,43 litres,Petrol,Sedan,5,Manual
+1074,Hyundai,Xcent,Sx 1.2 (O),BS IV,43 litres,Petrol,Sedan,5,Manual
+1075,Hyundai,Xcent,S 1.2 Crdi,BS IV,43 litres,Diesel,Sedan,5,Manual
+1076,Hyundai,Xcent,E,BS IV,43 litres,Petrol,Sedan,5,Manual
+1077,Hyundai,Xcent,Sx 1.2 Crdi,BS IV,43 litres,Diesel,Sedan,5,Manual
+1078,Hyundai,Xcent,Sx 1.2 Crdi (O),BS IV,43 litres,Diesel,Sedan,5,Manual
+1079,Hyundai,Xcent,E Crdi,BS IV,43 litres,Diesel,Sedan,5,Manual
+1080,Nissan,Micra,Xl (O) Cvt,BS IV,41 litres,Petrol,Hatchback,5,Automatic
+1081,Nissan,Micra,Xv Cvt,BS IV,41 litres,Petrol,Hatchback,5,Automatic
+1082,Nissan,Micra,Xld (O),BS IV,41 litres,Diesel,Hatchback,5,Manual
+1083,Nissan,Micra,Xvd,BS IV,41 litres,Diesel,Hatchback,5,Manual
+1084,Mahindra,Bolero,Zlx,BS IV,60 litres,Diesel,SUV,5,Manual
+1085,Mahindra,Bolero,Slx,BS IV,60 litres,Diesel,SUV,5,Manual
+1086,Mahindra,Bolero,Sle,BS IV,60 litres,Diesel,SUV,5,Manual
+1087,Mahindra,Bolero,Ex,BS IV,60 litres,Diesel,SUV,5,Manual
+1088,Mahindra,Bolero,Ex Non Ac,BS IV,60 litres,Diesel,SUV,5,Manual
+1089,Maruti Suzuki,Ciaz,1.3L Alpha Smart Hybrid,BS IV,43 litres,Diesel,Sedan,5,Manual
+1090,Maruti Suzuki,Ciaz,1.3L Sigma Smart Hybrid,BS IV,43 litres,Diesel,Sedan,5,Manual
+1091,Maruti Suzuki,Ciaz,1.3L Delta Smart Hybrid,BS IV,43 litres,Diesel,Sedan,5,Manual
+1092,Maruti Suzuki,Ciaz,1.3L Zeta Smart Hybrid,BS IV,43 litres,Diesel,Sedan,5,Manual
+1093,Maruti Suzuki,Ciaz,1.5L Sigma Smart Hybrid,BS 6,43 litres,Petrol,Sedan,5,Manual
+1094,Maruti Suzuki,Ciaz,1.5L Delta Smart Hybrid,BS 6,43 litres,Petrol,Sedan,5,Manual
+1095,Maruti Suzuki,Ciaz,1.5L Zeta Smart Hybrid,BS 6,43 litres,Petrol,Sedan,5,Manual
+1096,Maruti Suzuki,Ciaz,1.5L Alpha Smart Hybrid,BS 6,43 litres,Petrol,Sedan,5,Manual
+1097,Maruti Suzuki,Ciaz,1.5L Delta At Smart Hybrid,BS 6,43 litres,Petrol,Sedan,4,Automatic
+1098,Maruti Suzuki,Ciaz,1.5L Zeta At Smart Hybrid,BS 6,43 litres,Petrol,Sedan,4,Automatic
+1099,Maruti Suzuki,Ciaz,1.5L Alpha At Smart Hybrid,BS 6,43 litres,Petrol,Sedan,4,Automatic
