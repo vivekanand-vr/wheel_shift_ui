@@ -57,7 +57,7 @@ const Sidebar = () => {
       title: 'Management',
       links: [
         { name: 'sales', icon: <ShoppingCart size={20} />, text: 'Sales' },
-        { name: 'customers', icon: <Users size={20} />, text: 'Customers' },
+        { name: 'customers', icon: <Users size={20} />, text: 'Clients' },
         { name: 'employees', icon: <SquareUser size={20} />, text: 'Employees' },
         { name: 'transactions', icon: <IndianRupee size={20} />, text: 'Transactions'}, 
         { name: 'inquiries', icon: <MessageSquare size={20} />, text: 'Inquiries' },

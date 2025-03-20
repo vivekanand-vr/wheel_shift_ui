@@ -1,7 +1,7 @@
 import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import Inventory from "../pages/Inventory";
-import Customers from "../pages/Customers";
+import Clients from "../pages/Clients";
 import Employees from "../pages/Employees";
 import Sales from "../pages/Sales";
 import Transactions from "../pages/Transactions";
@@ -16,7 +16,7 @@ const protectedRoutes = [
     { path: "/home", component: <Home /> },
     { path: "/dashboard", component: <Dashboard /> },
     { path: "/inventory", component: <Inventory /> },
-    { path: "/customers", component: <Customers />},
+    { path: "/customers", component: <Clients />},
     { path: "/employees", component: <Employees /> },
     { path: "/sales", component: <Sales /> },
     { path: "/transactions", component: <Transactions />},

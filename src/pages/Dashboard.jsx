@@ -29,7 +29,7 @@ const Dashboard = () => {
           trend="up"
         />
         <StatsCard 
-          title="Customers" 
+          title="Clients" 
           value="1,254" 
           change="+8%" 
           icon={<Users className="text-purple-500" />} 
