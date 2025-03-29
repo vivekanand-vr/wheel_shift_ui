@@ -5,7 +5,7 @@ import { Car, Plus, Search, Filter, RefreshCw } from 'lucide-react';
 import axios from 'axios';
 import CarForm from '../components/manageCars/CarForm.jsx';
 
-const Inventory = () => {
+const Cars = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [vehicles, setVehicles] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -129,7 +129,7 @@ const Inventory = () => {
   };
 
   return (
-    <PageTemplate title="Inventory Management">
+    <PageTemplate title="Cars Management">
       {/* Action Bar */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
         <div className="relative w-full md:w-96">
@@ -239,7 +239,7 @@ const Inventory = () => {
         </div>
       )}
 
-      {/* Inventory Table */}
+      {/* Cars Table */}
       {!loading && !error && (
         <div className="bg-white shadow rounded-lg overflow-hidden">
           <div className="overflow-x-auto">
@@ -409,4 +409,4 @@ const Inventory = () => {
   );
 };
 
-export default Inventory;
+export default Cars;

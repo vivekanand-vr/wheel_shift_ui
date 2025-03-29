@@ -16,7 +16,7 @@ import {
   MapPinCheckInside,
   SquareCheckBig,
   SquareUser,
-  Truck
+  CarFront
 } from 'lucide-react';
 
 const Sidebar = () => {
@@ -50,7 +50,7 @@ const Sidebar = () => {
       title: 'Dashboard',
       links: [
         { name: 'home', icon: <Home size={20} />, text: 'Home' },
-        { name: 'inventory', icon: <Truck size={20} />, text: 'Inventory' },
+        { name: 'cars', icon: <CarFront size={20} />, text: 'Cars' },
       ],
     },
     {

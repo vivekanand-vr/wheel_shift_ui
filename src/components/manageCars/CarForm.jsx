@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CarModelForm from './CarModelForm';
 import CarDetailsForm from './CarDetailsForm';
 import AdditionalDetailsForm from './AdditionalDetailsForm';
+import axios from 'axios';
 
 const CarForm = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1);
@@ -36,7 +37,7 @@ const CarForm = ({ isOpen, onClose }) => {
     setStep(step - 1);
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Convert numeric string values to numbers
@@ -57,7 +58,14 @@ const CarForm = ({ isOpen, onClose }) => {
       }
     };
     
-    console.log("Data submitted successfully", processedData);
+    // console.log("Data submitted successfully", processedData);
+    try {
+      const response = await axios.post('http://localhost:9000/api/v1/cars', processedData);
+      console.log("Data submitted successfully", response.data);
+      onClose(); // Close the modal
+    } catch(err){
+      console.log("Error submitting car data", err);
+    }
   };
   
   if(!isOpen) return null;

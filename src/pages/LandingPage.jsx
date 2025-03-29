@@ -34,13 +34,13 @@ const LandingPage = () => {
   // Login form
   const loginFormik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: 'admin@ws.com',
+      password: 'password',
     },
     validationSchema: loginSchema,
     onSubmit: async (values) => {
       try {
-        await dispatch(loginUser(values));
+        dispatch(loginUser(values));
         navigate('/dashboard');
       } catch (error) {
         console.error('Login error:', error);

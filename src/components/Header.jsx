@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ChevronDown, User, LogOut } from "lucide-react";
 import { logoutUser } from '../store/actions/authActions';
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ title }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const user  = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
-  
+  const navigate = useNavigate();
+
   const handleLogout = () => {
       dispatch(logoutUser());
   };
@@ -23,9 +26,9 @@ const Header = ({ title }) => {
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className="flex items-center space-x-2 text-gray-600 focus:outline-none"
           >
-            <span>Welcome, Admin</span>
+            <span>Welcome, {user?.name}</span>
             <img
-              src="https://vivekanand-vr.netlify.app/V_Image.jpg"
+              src={user?.photoUrl}
               alt="User avatar"
               className="w-10 h-10 rounded-full border"
             />
@@ -40,7 +43,7 @@ const Header = ({ title }) => {
                 onClick={() => {
                   setDropdownOpen(false);
                   // Navigate to profile (Replace with actual routing logic)
-                  console.log("Go to Profile");
+                  navigate("/my-profile");
                 }}
               >
                 <User size={18} className="mr-2" />

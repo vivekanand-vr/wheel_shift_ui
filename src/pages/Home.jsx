@@ -31,7 +31,7 @@ const Home = () => {
   const alerts = [
     { id: 1, type: 'expiring_reservation', message: '3 reservations expiring in the next 48 hours', severity: 'high', link: '/reservations' },
     { id: 2, type: 'storage_capacity', message: 'Southside Warehouse reaching 90% capacity', severity: 'medium', link: '/storage-locations' },
-    { id: 3, type: 'maintenance', message: '5 vehicles due for maintenance check', severity: 'medium', link: '/inventory' },
+    { id: 3, type: 'maintenance', message: '5 vehicles due for maintenance check', severity: 'medium', link: '/cars' },
     { id: 4, type: 'document', message: 'Registration documents pending for 2 vehicles', severity: 'low', link: '/documents' }
   ];
 
