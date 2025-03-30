@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate';
-import EmployeeModal from '../components/manageEmployees/EmployeeModal';
-import { Users, Plus, Search, RefreshCw, Calendar, Award, AlertTriangle, Check, X } from 'lucide-react';
+import EmployeeModal from '../components/employees/EmployeeModal';
+import { Users, Plus, Search, RefreshCw, Calendar, Award, AlertTriangle, X } from 'lucide-react';
 import axios from 'axios';
 
 const Employees = () => {

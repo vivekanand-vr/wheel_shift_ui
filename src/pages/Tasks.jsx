@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate.jsx';
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import axios from 'axios';
-import TaskModal from '../components/manageTasks/TaskModal.jsx';
-import ColumnModal from '../components/manageTasks/ColumnModal.jsx';
-import ConfirmationDialog from '../components/manageTasks/ConfirmationDialog.jsx';
+import TaskModal from '../components/tasks/TaskModal.jsx';
+import ColumnModal from '../components/tasks/ColumnModal.jsx';
+import ConfirmationDialog from '../components/tasks/ConfirmationDialog.jsx';
 
 import { 
   CheckSquare, 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate.jsx';
 import { Plus, Search, Filter, RefreshCw, Warehouse, Car, Phone, MapPin, Edit as EditIcon, Trash } from 'lucide-react';
 import axios from 'axios';
-import LocationModal from '../components/manageLocations/LocationModal.jsx';
+import LocationModal from '../components/locations/LocationModal.jsx';
 
 const Locations = () => {
   const [searchTerm, setSearchTerm] = useState('');
