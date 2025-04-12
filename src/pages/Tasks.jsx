@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate.jsx';
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
+import axios from 'axios';
+import TaskModal from '../components/tasks/TaskModal.jsx';
+import ColumnModal from '../components/tasks/ColumnModal.jsx';
+import ConfirmationDialog from '../components/tasks/ConfirmationDialog.jsx';
 
 import { 
   CheckSquare, 
@@ -12,116 +16,97 @@ import {
   Calendar, 
   Tag, 
   MoreHorizontal, 
-  PlusCircle
+  PlusCircle,
+  Edit,
+  Trash
 } from 'lucide-react';
 
+// Base URL for API
+const API_BASE_URL = 'http://localhost:9000/api/kanban';
+
 const Tasks = () => {
-  // Initial data for the Kanban board
-  const initialData = {
-    tasks: {
-      'task-1': { 
-        id: 'task-1', 
-        title: 'Update vehicle listings', 
-        description: 'Add new inventory with photos',
-        assignee: 'John Doe', 
-        dueDate: '2025-03-15',
-        priority: 'high',
-        tags: ['inventory', 'website']
-      },
-      'task-2': { 
-        id: 'task-2', 
-        title: 'Follow up with customer inquiries', 
-        description: 'Reply to all pending customer messages',
-        assignee: 'Jane Smith', 
-        dueDate: '2025-03-13',
-        priority: 'medium',
-        tags: ['customers', 'sales']
-      },
-      'task-3': { 
-        id: 'task-3', 
-        title: 'Schedule maintenance for showroom vehicles', 
-        description: 'Arrange service for display models',
-        assignee: 'Mike Johnson', 
-        dueDate: '2025-03-20',
-        priority: 'low',
-        tags: ['maintenance', 'service']
-      },
-      'task-4': { 
-        id: 'task-4', 
-        title: 'Prepare monthly sales report', 
-        description: 'Compile sales data for management review',
-        assignee: 'Sarah Williams', 
-        dueDate: '2025-03-31',
-        priority: 'high',
-        tags: ['reports', 'finance']
-      },
-      'task-5': { 
-        id: 'task-5', 
-        title: 'Order new promotional materials', 
-        description: 'Get brochures and banners for upcoming sale',
-        assignee: 'John Doe', 
-        dueDate: '2025-03-18',
-        priority: 'medium',
-        tags: ['marketing', 'promotion']
-      },
-      'task-6': { 
-        id: 'task-6', 
-        title: 'Update CRM with new leads', 
-        description: 'Enter contact information for potential customers',
-        assignee: 'Jane Smith', 
-        dueDate: '2025-03-14',
-        priority: 'medium',
-        tags: ['customers', 'crm']
-      },
-      'task-7': { 
-        id: 'task-7', 
-        title: 'Review pricing strategy', 
-        description: 'Analyze competitor prices and adjust accordingly',
-        assignee: 'Mike Johnson', 
-        dueDate: '2025-03-25',
-        priority: 'high',
-        tags: ['strategy', 'pricing']
-      },
-      'task-8': { 
-        id: 'task-8', 
-        title: 'Process vehicle registrations', 
-        description: 'Complete paperwork for recent sales',
-        assignee: 'Sarah Williams', 
-        dueDate: '2025-03-16',
-        priority: 'high',
-        tags: ['admin', 'legal']
+  // State for kanban data
+  const [data, setData] = useState({
+    tasks: {},
+    columns: {},
+    columnOrder: []
+  });
+  
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Modal states
+  const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
+  const [isColumnModalOpen, setIsColumnModalOpen] = useState(false);
+  const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
+  const [currentTaskData, setCurrentTaskData] = useState({});
+  const [currentColumnData, setCurrentColumnData] = useState({});
+  const [deleteTarget, setDeleteTarget] = useState({ id: null, type: null, name: null, columnId: null });
+
+  // Fetch kanban board data
+  const fetchKanbanBoard = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(`${API_BASE_URL}/board`);
+      
+      // Transform the data from backend format to the format used by the component
+      const boardData = response.data;
+      const transformedData = transformBoardData(boardData);
+      
+      setData(transformedData);
+      setLoading(false);
+    } catch (err) {
+      console.error('Error fetching kanban board:', err);
+      setError('Failed to load tasks. Please try again later.');
+      setLoading(false);
+      
+      // If board doesn't exist yet, initialize it
+      if (err.response && err.response.status === 404) {
+        try {
+          await axios.post(`${API_BASE_URL}/initialize`);
+          fetchKanbanBoard(); // Try fetching again after initialization
+        } catch (initErr) {
+          console.error('Error initializing board:', initErr);
+        }
       }
-    },
-    columns: {
-      'column-1': {
-        id: 'column-1',
-        title: 'To Do',
-        taskIds: ['task-1', 'task-4', 'task-7'],
-      },
-      'column-2': {
-        id: 'column-2',
-        title: 'In Progress',
-        taskIds: ['task-2', 'task-5', 'task-8'],
-      },
-      'column-3': {
-        id: 'column-3',
-        title: 'Review',
-        taskIds: ['task-6'],
-      },
-      'column-4': {
-        id: 'column-4',
-        title: 'Done',
-        taskIds: ['task-3'],
-      },
-    },
-    columnOrder: ['column-1', 'column-2', 'column-3', 'column-4'],
+    }
   };
 
-  // State for kanban data
-  const [data, setData] = useState(initialData);
-  
+  // Transform data from backend format to the format used by the component
+  const transformBoardData = (boardData) => {
+    // Convert tasks array to object with taskId as key
+    const tasksObj = {};
+    boardData.tasks.forEach(task => {
+      tasksObj[task.id] = {
+        id: task.id,
+        title: task.title,
+        description: task.description,
+        assignee: task.assignee,
+        dueDate: task.dueDate,
+        priority: task.priority,
+        tags: task.tags || []
+      };
+    });
+    
+    // Convert columns array to object with columnId as key
+    const columnsObj = {};
+    boardData.columns.forEach(column => {
+      columnsObj[column.id] = {
+        id: column.id,
+        title: column.title,
+        taskIds: column.taskIds || []
+      };
+    });
+    
+    return {
+      tasks: tasksObj,
+      columns: columnsObj,
+      columnOrder: boardData.columnOrder
+    };
+  };
+
   // Handle drag end
-  const onDragEnd = (result) => {
+  const onDragEnd = async (result) => {
     const { destination, source, draggableId } = result;
 
     // If there's no destination or if dropped in the same place
@@ -131,6 +116,7 @@ const Tasks = () => {
       return;
     }
 
+    // Apply the change optimistically in the UI first
     // Find source and destination columns
     const sourceColumn = data.columns[source.droppableId];
     const destColumn = data.columns[destination.droppableId];
@@ -155,37 +141,266 @@ const Tasks = () => {
       };
 
       setData(newData);
-      return;
+    } else {
+      // Moving from one column to another
+      const sourceTaskIds = Array.from(sourceColumn.taskIds);
+      sourceTaskIds.splice(source.index, 1);
+      
+      const newSourceColumn = {
+        ...sourceColumn,
+        taskIds: sourceTaskIds,
+      };
+
+      const destTaskIds = Array.from(destColumn.taskIds);
+      destTaskIds.splice(destination.index, 0, draggableId);
+      
+      const newDestColumn = {
+        ...destColumn,
+        taskIds: destTaskIds,
+      };
+
+      const newData = {
+        ...data,
+        columns: {
+          ...data.columns,
+          [newSourceColumn.id]: newSourceColumn,
+          [newDestColumn.id]: newDestColumn,
+        },
+      };
+
+      setData(newData);
     }
 
-    // Moving from one column to another
-    const sourceTaskIds = Array.from(sourceColumn.taskIds);
-    sourceTaskIds.splice(source.index, 1);
-    
-    const newSourceColumn = {
-      ...sourceColumn,
-      taskIds: sourceTaskIds,
-    };
-
-    const destTaskIds = Array.from(destColumn.taskIds);
-    destTaskIds.splice(destination.index, 0, draggableId);
-    
-    const newDestColumn = {
-      ...destColumn,
-      taskIds: destTaskIds,
-    };
-
-    const newData = {
-      ...data,
-      columns: {
-        ...data.columns,
-        [newSourceColumn.id]: newSourceColumn,
-        [newDestColumn.id]: newDestColumn,
-      },
-    };
-
-    setData(newData);
+    // Then send the update to the backend
+    try {
+      await axios.post(`${API_BASE_URL}/move-task`, {
+        taskId: draggableId,
+        sourceColumnId: source.droppableId,
+        sourceIndex: source.index,
+        destinationColumnId: destination.droppableId,
+        destinationIndex: destination.index
+      });
+    } catch (err) {
+      console.error('Error updating task position:', err);
+      // If the API call fails, revert back to the original state by re-fetching
+      fetchKanbanBoard();
+    }
   };
+
+  // Open task modal with selected column ID
+  const openTaskModal = (columnId, task = {}) => {
+    setCurrentTaskData({ ...task, columnId });
+    setIsTaskModalOpen(true);
+  };
+
+  // Open column modal
+  const openColumnModal = (column = {}) => {
+    setCurrentColumnData(column);
+    setIsColumnModalOpen(true);
+  };
+
+  // Open confirmation dialog for deletion
+  const openConfirmDialog = (id, type, name, columnId = null) => {
+    setDeleteTarget({ id, type, name, columnId });
+    setIsConfirmDialogOpen(true);
+  };
+
+  // Handler for task operations (both create and update)
+  const handleTaskOperation = async (taskData) => {
+    const isEditing = !!taskData.id;
+    const columnId = taskData.columnId;
+
+    try {
+      let response;
+      let updatedData = { ...data };
+
+      if (isEditing) {
+        // Update existing task
+        response = await axios.put(`${API_BASE_URL}/tasks/${taskData.id}`, taskData);
+        const updatedTask = response.data;
+
+        // Update the task in local state
+        updatedData = {
+          ...data,
+          tasks: {
+            ...data.tasks,
+            [updatedTask.id]: {
+              id: updatedTask.id,
+              title: updatedTask.title,
+              description: updatedTask.description,
+              assignee: updatedTask.assignee,
+              dueDate: updatedTask.dueDate,
+              priority: updatedTask.priority,
+              tags: updatedTask.tags || []
+            }
+          }
+        };
+      } else {
+        // Create new task
+        const taskToSend = { ...taskData };
+        delete taskToSend.columnId; // Remove columnId before sending to API
+        
+        response = await axios.post(`${API_BASE_URL}/tasks?columnId=${columnId}`, taskToSend);
+        const createdTask = response.data;
+        
+        // Add the new task to local state
+        updatedData = {
+          ...data,
+          tasks: {
+            ...data.tasks,
+            [createdTask.id]: {
+              id: createdTask.id,
+              title: createdTask.title,
+              description: createdTask.description,
+              assignee: createdTask.assignee,
+              dueDate: createdTask.dueDate,
+              priority: createdTask.priority,
+              tags: createdTask.tags || []
+            }
+          },
+          columns: {
+            ...data.columns,
+            [columnId]: {
+              ...data.columns[columnId],
+              taskIds: [...data.columns[columnId].taskIds, createdTask.id]
+            }
+          }
+        };
+      }
+      
+      setData(updatedData);
+    } catch (err) {
+      console.error(`Error ${isEditing ? 'updating' : 'creating'} task:`, err);
+      // Show an error message to the user
+      alert(`Failed to ${isEditing ? 'update' : 'create'} task. Please try again.`);
+    }
+  };
+
+  // Handler for column operations (both create and update)
+  const handleColumnOperation = async (columnData) => {
+    const isEditing = !!columnData.id;
+
+    try {
+      let response;
+      let updatedData = { ...data };
+
+      if (isEditing) {
+        // Update existing column
+        response = await axios.put(`${API_BASE_URL}/columns/${columnData.id}`, columnData);
+        const updatedColumn = response.data;
+
+        // Update the column in local state
+        updatedData = {
+          ...data,
+          columns: {
+            ...data.columns,
+            [updatedColumn.id]: {
+              ...data.columns[updatedColumn.id],
+              title: updatedColumn.title
+            }
+          }
+        };
+      } else {
+        // Create new column
+        response = await axios.post(`${API_BASE_URL}/columns`, columnData);
+        const createdColumn = response.data;
+        
+        // Add the new column to local state
+        updatedData = {
+          ...data,
+          columns: {
+            ...data.columns,
+            [createdColumn.id]: {
+              id: createdColumn.id,
+              title: createdColumn.title,
+              taskIds: []
+            }
+          },
+          columnOrder: [...data.columnOrder, createdColumn.id]
+        };
+      }
+      
+      setData(updatedData);
+    } catch (err) {
+      console.error(`Error ${isEditing ? 'updating' : 'creating'} column:`, err);
+      // Show an error message to the user
+      alert(`Failed to ${isEditing ? 'update' : 'create'} column. Please try again.`);
+    }
+  };
+
+  // Delete a task
+  const deleteTask = async (taskId, columnId) => {
+    try {
+      await axios.delete(`${API_BASE_URL}/tasks/${taskId}`);
+      
+      // Update local state
+      const newTaskIds = data.columns[columnId].taskIds.filter(id => id !== taskId);
+      
+      const newData = {
+        ...data,
+        tasks: Object.keys(data.tasks).reduce((acc, key) => {
+          if (key !== taskId) {
+            acc[key] = data.tasks[key];
+          }
+          return acc;
+        }, {}),
+        columns: {
+          ...data.columns,
+          [columnId]: {
+            ...data.columns[columnId],
+            taskIds: newTaskIds
+          }
+        }
+      };
+      
+      setData(newData);
+    } catch (err) {
+      console.error('Error deleting task:', err);
+      alert('Failed to delete task. Please try again.');
+    }
+  };
+
+  // Delete a column
+  const deleteColumn = async (columnId) => {
+    try {
+      await axios.delete(`${API_BASE_URL}/columns/${columnId}`);
+      
+      // Update local state
+      const newColumnOrder = data.columnOrder.filter(id => id !== columnId);
+      
+      const newData = {
+        ...data,
+        columns: Object.keys(data.columns).reduce((acc, key) => {
+          if (key !== columnId) {
+            acc[key] = data.columns[key];
+          }
+          return acc;
+        }, {}),
+        columnOrder: newColumnOrder
+      };
+      
+      setData(newData);
+    } catch (err) {
+      console.error('Error deleting column:', err);
+      alert('Failed to delete column. Please try again.');
+    }
+  };
+
+  // Handle confirmation dialog actions
+  const handleConfirmDelete = () => {
+    const { id, type, columnId } = deleteTarget;
+    
+    if (type === 'task') {
+      deleteTask(id, columnId);
+    } else if (type === 'column') {
+      deleteColumn(id);
+    }
+  };
+
+  // Load data on component mount
+  useEffect(() => {
+    fetchKanbanBoard();
+  }, []);
 
   // Get priority badge color
   const getPriorityColor = (priority) => {
@@ -203,14 +418,16 @@ const Tasks = () => {
 
   // Get column header icon
   const getColumnIcon = (columnId) => {
-    switch (columnId) {
-      case 'column-1': // To Do
+    const index = data.columnOrder.indexOf(columnId);
+    
+    switch (index) {
+      case 0: // To Do
         return <Clock size={18} className="text-gray-600" />;
-      case 'column-2': // In Progress
+      case 1: // In Progress
         return <Loader size={18} className="text-blue-600" />;
-      case 'column-3': // Review
+      case 2: // Review
         return <AlertCircle size={18} className="text-yellow-600" />;
-      case 'column-4': // Done
+      case 3: // Done
         return <CheckCircle size={18} className="text-green-600" />;
       default:
         return <CheckSquare size={18} className="text-gray-600" />;
@@ -219,12 +436,14 @@ const Tasks = () => {
 
   // Format date 
   const formatDate = (dateString) => {
+    if (!dateString) return '';
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   };
 
   // Get days remaining for due date
   const getDaysRemaining = (dateString) => {
+    if (!dateString) return '';
     const today = new Date();
     const dueDate = new Date(dateString);
     const diffTime = dueDate - today;
@@ -243,6 +462,7 @@ const Tasks = () => {
 
   // Get due date color based on days remaining
   const getDueDateColor = (dateString) => {
+    if (!dateString) return 'text-gray-600';
     const today = new Date();
     const dueDate = new Date(dateString);
     const diffTime = dueDate - today;
@@ -257,6 +477,32 @@ const Tasks = () => {
     }
   };
 
+  if (loading) {
+    return (
+      <PageTemplate title="Task Management">
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+        </div>
+      </PageTemplate>
+    );
+  }
+
+  if (error) {
+    return (
+      <PageTemplate title="Task Management">
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+          <p>{error}</p>
+          <button 
+            onClick={fetchKanbanBoard} 
+            className="mt-2 bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded"
+          >
+            Try Again
+          </button>
+        </div>
+      </PageTemplate>
+    );
+  }
+
   return (
     <PageTemplate title="Task Management">
       <div className="grid grid-cols-1 gap-6 mb-6">
@@ -267,12 +513,13 @@ const Tasks = () => {
               <CheckSquare size={20} className="text-purple-500 mr-2" />
               Task Kanban Board
             </h2>
-            <div className="flex space-x-2">
-              <button className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg flex items-center text-sm font-medium">
-                <PlusCircle size={16} className="mr-1" />
-                Add New Task
-              </button>
-            </div>
+            <button 
+              onClick={() => openColumnModal()}
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center text-sm font-medium"
+            >
+              <PlusCircle size={16} className="mr-1" />
+              Add Column
+            </button>
           </div>
         </div>
       </div>
@@ -294,9 +541,20 @@ const Tasks = () => {
                       {column.taskIds.length}
                     </span>
                   </div>
-                  <button className="text-gray-400 hover:text-gray-600">
-                    <MoreHorizontal size={16} />
-                  </button>
+                  <div className="flex space-x-2">
+                    <button 
+                      onClick={() => openColumnModal(column)}
+                      className="text-gray-400 hover:text-blue-600"
+                    >
+                      <Edit size={16} />
+                    </button>
+                    <button 
+                      onClick={() => openConfirmDialog(column.id, 'column', column.title)}
+                      className="text-gray-400 hover:text-red-600"
+                    >
+                      <Trash size={16} />
+                    </button>
+                  </div>
                 </div>
                 
                 <Droppable droppableId={column.id}>
@@ -319,15 +577,31 @@ const Tasks = () => {
                               <div className="mb-2">
                                 <div className="flex justify-between items-start">
                                   <h4 className="font-medium text-gray-800">{task.title}</h4>
-                                  <span className={`text-xs px-2 py-1 rounded-full uppercase font-medium ${getPriorityColor(task.priority)}`}>
-                                    {task.priority}
-                                  </span>
+                                  <div className="flex items-center">
+                                    <span className={`text-xs px-2 py-1 rounded-full uppercase font-medium ${getPriorityColor(task.priority)}`}>
+                                      {task.priority}
+                                    </span>
+                                    <div className="flex ml-2 space-x-1">
+                                      <button 
+                                        onClick={() => openTaskModal(column.id, task)}
+                                        className="text-gray-400 hover:text-blue-600"
+                                      >
+                                        <Edit size={14} />
+                                      </button>
+                                      <button 
+                                        onClick={() => openConfirmDialog(task.id, 'task', task.title, column.id)}
+                                        className="text-gray-400 hover:text-red-600"
+                                      >
+                                        <Trash size={14} />
+                                      </button>
+                                    </div>
+                                  </div>
                                 </div>
                                 <p className="text-sm text-gray-600 mt-1">{task.description}</p>
                               </div>
                               
                               <div className="flex flex-wrap gap-1 mt-2 mb-3">
-                                {task.tags.map((tag, i) => (
+                                {task.tags && task.tags.map((tag, i) => (
                                   <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full flex items-center">
                                     <Tag size={12} className="mr-1" />
                                     {tag}
@@ -355,7 +629,10 @@ const Tasks = () => {
                 </Droppable>
                 
                 <div className="px-4 py-3 border-t border-gray-200">
-                  <button className="w-full py-2 text-gray-600 hover:text-purple-600 text-sm flex items-center justify-center">
+                  <button 
+                    className="w-full py-2 text-gray-600 hover:text-purple-600 text-sm flex items-center justify-center"
+                    onClick={() => openTaskModal(column.id)}
+                  >
                     <PlusCircle size={16} className="mr-1" />
                     Add Task
                   </button>
@@ -365,6 +642,31 @@ const Tasks = () => {
           })}
         </div>
       </DragDropContext>
+
+      {/* Task Modal */}
+      <TaskModal 
+        isOpen={isTaskModalOpen} 
+        onClose={() => setIsTaskModalOpen(false)}
+        onSave={handleTaskOperation}
+        initialData={currentTaskData}
+      />
+
+      {/* Column Modal */}
+      <ColumnModal 
+        isOpen={isColumnModalOpen} 
+        onClose={() => setIsColumnModalOpen(false)}
+        onSave={handleColumnOperation}
+        initialData={currentColumnData}
+      />
+
+      {/* Confirmation Dialog */}
+      <ConfirmationDialog
+        isOpen={isConfirmDialogOpen}
+        onClose={() => setIsConfirmDialogOpen(false)}
+        onConfirm={handleConfirmDelete}
+        itemType={deleteTarget.type}
+        itemName={deleteTarget.name}
+      />
     </PageTemplate>
   );
 };

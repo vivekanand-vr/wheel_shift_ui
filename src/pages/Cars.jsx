@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate.jsx';
-import FilterModal from '../components/manageCars/FilterCars.jsx';
+import FilterModal from '../components/cars/FilterCars.jsx';
 import { Car, Plus, Search, Filter, RefreshCw } from 'lucide-react';
 import axios from 'axios';
-import CarForm from '../components/manageCars/CarForm.jsx';
+import CarForm from '../components/cars/CarForm.jsx';
 
 const Cars = () => {
   const [searchTerm, setSearchTerm] = useState('');

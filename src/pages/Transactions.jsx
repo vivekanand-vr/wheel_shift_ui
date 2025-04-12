@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate.jsx';
-import TransactionModal from '../components/manageTransactions/TransactionModal.jsx';
+import TransactionModal from '../components/transactions/TransactionModal.jsx';
 import { DollarSign, Plus, Search, Filter, RefreshCw, TrendingUp, TrendingDown, Receipt } from 'lucide-react';
 
 const FinancialTransactions = () => {

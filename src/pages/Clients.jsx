@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate';
-import ClientModal from '../components/manageClients/ClientModal';
-import ClientFilter from '../components/manageClients/ClientFilter';
+import ClientModal from '../components/clients/ClientModal';
+import ClientFilter from '../components/clients/ClientFilter';
 import { Users, Plus, Search, Filter, RefreshCw, Mail, Phone, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
 import axios from 'axios';
 
