@@ -3,15 +3,18 @@ import PageTemplate from '../components/PageTemplate.jsx';
 import FilterModal from '../components/cars/FilterCars.jsx';
 import { Car, Plus, Search, Filter, RefreshCw } from 'lucide-react';
 import axios from 'axios';
-import CarForm from '../components/cars/CarForm.jsx';
+import AddEditCar from '../components/cars/AddEditCar.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const Cars = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [vehicles, setVehicles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [showCarFormModal, setShowCarFormModal] = useState(false);
+  const [selectedCar, setSelectedCar] = useState(null);
   
   // Pagination states
   const [currentPage, setCurrentPage] = useState(0);
@@ -51,7 +54,7 @@ const Cars = () => {
       
       // If there are filter criteria, use the search endpoint
       if (criteria) {
-        response = await axios.post('http://localhost:9000/api/v1/cars/search/advanced', criteria, {
+        response = await axios.post('http://localhost:9000/api/v1/cars/filters', criteria, {
           params: { page, size }
         });
       } else if (searchTerm) {
@@ -123,10 +126,19 @@ const Cars = () => {
       locationId: null,
       purchaseDateFrom: null,
       purchaseDateTo: null,
-      searchText: ''
     });
     fetchCars(0, pageSize);
   };
+
+  function handleAddCar() {
+    setSelectedCar(null); // Ensures new form data 
+    setShowCarFormModal(true); 
+  }
+
+  function handleUpdateCar(car) { 
+    setSelectedCar(car); 
+    setShowCarFormModal(true); 
+  }
 
   return (
     <PageTemplate title="Cars Management">
@@ -163,7 +175,7 @@ const Cars = () => {
           </button>
           <button 
             className="px-4 py-2 bg-blue-600 rounded-md text-sm font-medium text-white hover:bg-blue-700 flex items-center"
-            onClick={() => setShowCarFormModal(true)} >
+            onClick={handleAddCar} >
             <Plus size={16} className="mr-2" />
             Add Vehicle
           </button>
@@ -219,9 +231,20 @@ const Cars = () => {
 
       {/* Add Car Modal */}
       {showCarFormModal && (
-        <CarForm 
+        <AddEditCar
+          refresh={handleRefresh} 
           isOpen={showCarFormModal}
           onClose={() => setShowCarFormModal(false)}
+        />
+      )}
+
+      {/* Update Car Modal */}
+      {showCarFormModal && (
+        <AddEditCar 
+          refresh={handleRefresh}
+          isOpen={showCarFormModal}
+          onClose={() => setShowCarFormModal(false)}
+          carToEdit={selectedCar}
         />
       )}
 
@@ -262,6 +285,9 @@ const Cars = () => {
                     Fuel Type
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Body Type
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Status
                   </th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -272,7 +298,7 @@ const Cars = () => {
               <tbody className="bg-white divide-y divide-gray-200">
                 {vehicles.map((vehicle) => (
                   <tr key={vehicle.id} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-6 py-4 whitespace-nowrap cursor-pointer" onClick={() => navigate(`/cars/${vehicle.id}`)}>
                       <div className="flex items-center">
                         <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
                           <Car size={20} className="text-gray-500" />
@@ -299,8 +325,11 @@ const Cars = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {vehicle.carModel.fuelType}
                     </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {vehicle.carModel.bodyType}
+                    </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
+                      <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-md 
                         ${vehicle.currentStatus === 'Available' ? 'bg-green-100 text-green-800' : 
                           vehicle.currentStatus === 'Sold' ? 'bg-gray-100 text-gray-800' : 
                           'bg-yellow-100 text-yellow-800'}`}>
@@ -308,7 +337,11 @@ const Cars = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <button className="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                      <button className="text-blue-600 hover:text-blue-900 mr-3"
+                              onClick={() => handleUpdateCar(vehicle)}
+                      >
+                        Edit
+                      </button>
                       <button className="text-red-600 hover:text-red-900">Delete</button>
                     </td>
                   </tr>

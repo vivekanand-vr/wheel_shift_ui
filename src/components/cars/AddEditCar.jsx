@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CarModelForm from './CarModelForm';
 import CarDetailsForm from './CarDetailsForm';
 import AdditionalDetailsForm from './AdditionalDetailsForm';
 import axios from 'axios';
 
-const CarForm = ({ isOpen, onClose }) => {
+const CarForm = ({ isOpen, onClose, refresh, carToEdit = null }) => {
   const [step, setStep] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+  const [stepValid, setStepValid] = useState(false);
+  
   const [formData, setFormData] = useState({
     carModel: { id: null },
     vinNumber: "",
@@ -28,8 +31,25 @@ const CarForm = ({ isOpen, onClose }) => {
       additionalFeatures: {}
     }
   });
+  
+  // When carToEdit is provided, populate the form with its data
+  useEffect(() => {
+    if (carToEdit) {
+      fetchCarData();
+    }
+  }, [carToEdit]);
+
+  const fetchCarData = async () => {
+    try {
+      const response = await axios.get(`http://localhost:9000/api/v1/cars/${carToEdit.id}`);
+      setFormData(response.data); // Set the form data with existing values
+    } catch(error){
+      console.error("Error fetching car details for udpate", error);
+    }
+  }
 
   const nextStep = () => {
+    setStepValid(false); // Reset validation for next step
     setStep(step + 1);
   };
   
@@ -39,6 +59,7 @@ const CarForm = ({ isOpen, onClose }) => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     
     // Convert numeric string values to numbers
     const processedData = {
@@ -58,13 +79,25 @@ const CarForm = ({ isOpen, onClose }) => {
       }
     };
     
-    // console.log("Data submitted successfully", processedData);
     try {
-      const response = await axios.post('http://localhost:9000/api/v1/cars', processedData);
-      console.log("Data submitted successfully", response.data);
+      let response;
+      
+      if (carToEdit && carToEdit.id) {
+        // Update existing car
+        response = await axios.put(`http://localhost:9000/api/v1/cars/${carToEdit.id}`, processedData);
+        console.log("Car updated successfully", response.data);
+      } else {
+        // Create new car
+        response = await axios.post('http://localhost:9000/api/v1/cars', processedData);
+        console.log("Car created successfully", response.data);
+      }
+      
+      refresh(); // Fetch the updated car list
       onClose(); // Close the modal
-    } catch(err){
+    } catch(err) {
       console.log("Error submitting car data", err);
+    } finally {
+      setIsLoading(false);
     }
   };
   
@@ -72,9 +105,11 @@ const CarForm = ({ isOpen, onClose }) => {
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl">
-        <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-          <h2 className="text-xl font-semibold text-gray-800">Add New Vehicle</h2>
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+          <h2 className="text-xl font-semibold text-gray-800">
+            {carToEdit ? 'Update Vehicle' : 'Add New Vehicle'}
+          </h2>
           <button 
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600"
@@ -107,10 +142,29 @@ const CarForm = ({ isOpen, onClose }) => {
             </div>
           </div>
           
-          <div>
-            {step === 1 && ( <CarModelForm setFormData={setFormData}/> )}
-            {step === 2 && ( <CarDetailsForm formData={formData} setFormData={setFormData} />)}
-            {step === 3 && ( <AdditionalDetailsForm formData={formData} setFormData={setFormData} />)}
+          <form onSubmit={handleSubmit}>
+            {step === 1 && (
+              <CarModelForm 
+                formData={formData} 
+                setFormData={setFormData} 
+                setStepValid={setStepValid}
+                isEditMode={!!carToEdit}
+              />
+            )}
+            {step === 2 && (
+              <CarDetailsForm 
+                formData={formData} 
+                setFormData={setFormData} 
+                setStepValid={setStepValid}
+              />
+            )}
+            {step === 3 && (
+              <AdditionalDetailsForm 
+                formData={formData} 
+                setFormData={setFormData} 
+                setStepValid={setStepValid}
+              />
+            )}
             
             <div className="mt-8 flex justify-between">
               {step > 1 && (
@@ -118,6 +172,7 @@ const CarForm = ({ isOpen, onClose }) => {
                   type="button" 
                   onClick={prevStep}
                   className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                  disabled={isLoading}
                 >
                   Previous
                 </button>
@@ -126,21 +181,22 @@ const CarForm = ({ isOpen, onClose }) => {
                 <button 
                   type="button" 
                   onClick={nextStep}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 ml-auto"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 ml-auto disabled:bg-blue-300 disabled:cursor-not-allowed"
+                  disabled={!stepValid || isLoading}
                 >
                   Next
                 </button>
               ) : (
                 <button 
-                  type="button"
-                  onClick={(e) => handleSubmit(e)}
-                  className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 ml-auto"
+                  type="submit"
+                  className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 ml-auto disabled:bg-green-300 disabled:cursor-not-allowed"
+                  disabled={!stepValid || isLoading}
                 >
-                  Submit
+                  {isLoading ? 'Submitting...' : carToEdit ? 'Update' : 'Submit'}
                 </button>
               )}
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

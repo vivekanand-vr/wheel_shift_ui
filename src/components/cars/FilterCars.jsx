@@ -18,8 +18,7 @@ const FilterCars = ({ isOpen, onClose, onApplyFilters, initialFilters }) => {
     status: '',
     locationId: null,
     purchaseDateFrom: null,
-    purchaseDateTo: null,
-    searchText: ''
+    purchaseDateTo: null
   });
 
   // Update local state when initialFilters change
@@ -82,8 +81,7 @@ const FilterCars = ({ isOpen, onClose, onApplyFilters, initialFilters }) => {
       status: '',
       locationId: null,
       purchaseDateFrom: null,
-      purchaseDateTo: null,
-      searchText: ''
+      purchaseDateTo: null
     });
   };
 
@@ -97,7 +95,7 @@ const FilterCars = ({ isOpen, onClose, onApplyFilters, initialFilters }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-90vh overflow-y-auto">
+      <div className="bg-white rounded-lg shadow-xl w-full max-w-xl max-h-90vh overflow-y-auto">
         <div className="p-4">
           {/* Header */}
           <div className="flex justify-between items-center mb-4">
@@ -107,19 +105,6 @@ const FilterCars = ({ isOpen, onClose, onApplyFilters, initialFilters }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-          </div>
-
-          {/* Search text */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">Search</label>
-            <input
-              type="text"
-              name="searchText"
-              value={filters.searchText || ''}
-              onChange={handleChange}
-              placeholder="Search by keywords..."
-              className="w-full p-2 border border-1 border-gray-400 rounded"
-            />
           </div>
 
           {/* Filters grid */}

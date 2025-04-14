@@ -1,20 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
-const AdditionalDetailsForm = ({ formData, setFormData }) => {
+const AdditionalDetailsForm = ({ formData, setFormData, setStepValid }) => {
+  const [additionalFeatures, setAdditionalFeatures] = useState([{ key: "", value: "" }]);
+  const [errors, setErrors] = useState({});
 
-  const [additionalFeatures, setAdditionalFeatures] = useState([
-      { key: "Sunroof", value: "No" },
-      { key: "Rear Camera", value: "Yes" },
-      { key: "Alloy Wheels", value: "Yes" },
-      { key: "Parking Sensors", value: "6" },
-      { key: "Fuel Efficiency", value: "8.5 km/l" }
-  ]);
+  // Initialize with existing data when editing
+  useEffect(() => {
+    if (formData.detailedSpecs?.additionalFeatures && Object.keys(formData.detailedSpecs.additionalFeatures).length > 0) {
+      const features = Object.entries(formData.detailedSpecs.additionalFeatures).map(([key, value]) => ({
+        key,
+        value: value.toString()
+      }));
+      
+      if (features.length > 0) {
+        setAdditionalFeatures(features);
+      }
+    }
+  }, []);
 
   // Convert additional features to the required format
   useEffect(() => {
     const featuresObj = {};
     additionalFeatures.forEach(feature => {
-      featuresObj[feature.key] = feature.value;
+      if (feature.key.trim() !== "") {
+        featuresObj[feature.key] = feature.value;
+      }
     });
     
     setFormData(prev => ({
@@ -25,6 +35,39 @@ const AdditionalDetailsForm = ({ formData, setFormData }) => {
       }
     }));
   }, [additionalFeatures]);
+
+  // Validate form
+  useEffect(() => {
+    validateForm();
+  }, [formData]);
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    // Check if required fields are filled
+    if (!formData.detailedSpecs?.doors) newErrors.doors = "Number of doors is required";
+    if (!formData.detailedSpecs?.seats) newErrors.seats = "Number of seats is required";
+    if (formData.detailedSpecs?.cargoCapacityLiters === undefined || formData.detailedSpecs?.cargoCapacityLiters === null) 
+      newErrors.cargoCapacityLiters = "Cargo capacity is required";
+    if (formData.detailedSpecs?.acceleration0To100 === undefined || formData.detailedSpecs?.acceleration0To100 === null) 
+      newErrors.acceleration0To100 = "Acceleration is required";
+    if (!formData.detailedSpecs?.topSpeed) newErrors.topSpeed = "Top speed is required";
+    
+    // Check if all additional features have both key and value
+    const hasEmptyFeature = additionalFeatures.some(feature => 
+      (feature.key.trim() !== "" && feature.value.trim() === "") || 
+      (feature.key.trim() === "" && feature.value.trim() !== "")
+    );
+    
+    if (hasEmptyFeature) {
+      newErrors.additionalFeatures = "All features must have both name and value";
+    }
+    
+    setErrors(newErrors);
+    
+    // Update step validation status
+    setStepValid(Object.keys(newErrors).length === 0);
+  };
 
   const handleAddFeature = () => {
     setAdditionalFeatures([...additionalFeatures, { key: "", value: "" }]);
@@ -58,70 +101,86 @@ const AdditionalDetailsForm = ({ formData, setFormData }) => {
       <h3 className="text-lg font-medium text-gray-800">Car Specifications</h3>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Number of Doors</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Number of Doors <span className="text-red-500">*</span>
+          </label>
           <input 
             type="number" 
             name="doors"
-            value={formData.detailedSpecs.doors}
+            value={formData.detailedSpecs?.doors || ''}
             onChange={handleDetailedSpecsChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={`w-full px-3 py-2 border ${errors.doors ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
             min="1"
             max="6"
             required
           />
+          {errors.doors && <p className="text-red-500 text-xs mt-1">{errors.doors}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Number of Seats</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Number of Seats <span className="text-red-500">*</span>
+          </label>
           <input 
             type="number" 
             name="seats"
-            value={formData.detailedSpecs.seats}
+            value={formData.detailedSpecs?.seats || ''}
             onChange={handleDetailedSpecsChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={`w-full px-3 py-2 border ${errors.seats ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
             min="1"
             max="12"
             required
           />
+          {errors.seats && <p className="text-red-500 text-xs mt-1">{errors.seats}</p>}
         </div>
       </div>
       
       <div className="grid grid-cols-3 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Cargo Capacity (L)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Cargo Capacity (L) <span className="text-red-500">*</span>
+          </label>
           <input 
             type="number" 
             name="cargoCapacityLiters"
-            value={formData.detailedSpecs.cargoCapacityLiters}
+            value={formData.detailedSpecs?.cargoCapacityLiters || ''}
             onChange={handleDetailedSpecsChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={`w-full px-3 py-2 border ${errors.cargoCapacityLiters ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
             min="0"
+            step="0.01"
             required
           />
+          {errors.cargoCapacityLiters && <p className="text-red-500 text-xs mt-1">{errors.cargoCapacityLiters}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">0-100 km/h (sec)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            0-100 km/h (sec) <span className="text-red-500">*</span>
+          </label>
           <input 
             type="number" 
             name="acceleration0To100"
-            value={formData.detailedSpecs.acceleration0To100}
+            value={formData.detailedSpecs?.acceleration0To100 || ''}
             onChange={handleDetailedSpecsChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={`w-full px-3 py-2 border ${errors.acceleration0To100 ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
             min="0"
             step="0.1"
             required
           />
+          {errors.acceleration0To100 && <p className="text-red-500 text-xs mt-1">{errors.acceleration0To100}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Top Speed (km/h)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Top Speed (km/h) <span className="text-red-500">*</span>
+          </label>
           <input 
             type="number" 
             name="topSpeed"
-            value={formData.detailedSpecs.topSpeed}
+            value={formData.detailedSpecs?.topSpeed || ''}
             onChange={handleDetailedSpecsChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={`w-full px-3 py-2 border ${errors.topSpeed ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
             min="0"
             required
           />
+          {errors.topSpeed && <p className="text-red-500 text-xs mt-1">{errors.topSpeed}</p>}
         </div>
       </div>
       
@@ -137,6 +196,10 @@ const AdditionalDetailsForm = ({ formData, setFormData }) => {
           </button>
         </div>
         
+        {errors.additionalFeatures && (
+          <p className="text-red-500 text-sm mb-2">{errors.additionalFeatures}</p>
+        )}
+        
         <div className="space-y-2">
           {additionalFeatures.map((feature, index) => (
             <div key={index} className="flex items-center space-x-2">
@@ -146,7 +209,6 @@ const AdditionalDetailsForm = ({ formData, setFormData }) => {
                 onChange={(e) => handleFeatureChange(index, 'key', e.target.value)}
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Feature name"
-                required
               />
               <input 
                 type="text" 
@@ -154,7 +216,6 @@ const AdditionalDetailsForm = ({ formData, setFormData }) => {
                 onChange={(e) => handleFeatureChange(index, 'value', e.target.value)}
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Feature details"
-                required
               />
               <button 
                 type="button" 
@@ -170,7 +231,7 @@ const AdditionalDetailsForm = ({ formData, setFormData }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AdditionalDetailsForm
+export default AdditionalDetailsForm;
