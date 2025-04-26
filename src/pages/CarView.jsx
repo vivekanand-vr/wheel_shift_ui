@@ -1,39 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PageTemplate from '../components/PageTemplate';
+import ReservationModal from '../components/cars/ReservationModal';
 import axios from 'axios';
 import {
-  Car,
-  Info,
-  Calendar,
-  Fuel,
-  Gauge,
-  Palette,
-  DollarSign,
-  MapPin,
-  Shield,
-  User,
-  Phone,
-  ClipboardList,
-  FileText,
-  AlertCircle,
-  Truck,
-  Check,
-  X,
-  FileSpreadsheet,
-  PiggyBank,
-  Clock,
-  FileBarChart,
-  Award,
-  Settings,
-  ArrowLeft,
-  CarFront
+  Car, Info, Calendar, Fuel, Gauge, Palette,
+  DollarSign, MapPin, Shield, User, Phone, ClipboardList,
+  FileText, AlertCircle, Truck, Check, X, FileSpreadsheet,
+  PiggyBank, Clock, FileBarChart, Award, Settings,
+  ArrowLeft, CarFront
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const CarView = () => {
   const { id } = useParams();
   const [car, setCar] = useState(null);
+  const [reservationModalOpen, setReservationModalOpen] = useState(false);
+  const [selectedReservation, setSelectedReservation] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -85,6 +68,22 @@ const CarView = () => {
       </PageTemplate>
     );
   }
+
+  const openNewReservationModal = () => {
+    setSelectedReservation(null);
+    setReservationModalOpen(true);
+  };
+  
+  const openUpdateReservationModal = (reservation) => {
+    setSelectedReservation(reservation);
+    setReservationModalOpen(true);
+  };
+
+    // Function to handle successful reservation updates
+    const handleReservationSuccess = () => {
+      setReservationModalOpen(false);
+    };
+    
 
   // Format price with currency
   const formatPrice = (price) => {
@@ -444,6 +443,64 @@ const CarView = () => {
           </div>
         </div>
       )}
+
+      {/* Reservation */}
+      {car.reservation && (
+        <div className="bg-white rounded-lg shadow p-6 mb-6">
+          <h2 className="text-xl font-semibold mb-4 flex items-center">
+            <Calendar size={20} className="mr-2 text-blue-600" />
+            Current Reservation
+          </h2>
+          
+          <div className="bg-purple-50 p-4 rounded-lg">
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="font-medium">
+                Reserved for {car.reservation?.client?.name}
+              </h3>
+              <span className="px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">
+                {car.reservation.status}
+              </span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+              <div>
+                <p className="text-sm text-gray-500">Reservation Date</p>
+                <p className="font-medium">{formatDate(car.reservation.reservationDate)}</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500">Expiry Date</p>
+                <p className="font-medium">{formatDate(car.reservation.expiryDate)}</p>
+              </div>
+            </div>
+            
+            {car.reservation.depositAmount && (
+              <div className="mb-3">
+                <p className="text-sm text-gray-500">Deposit</p>
+                <p className="font-medium">
+                  {formatPrice(car.reservation.depositAmount)} 
+                  {car.reservation.depositPaid ? ' (Paid)' : ' (Not Paid)'}
+                </p>
+              </div>
+            )}
+            
+            {car.reservation.notes && (
+              <div className="mb-3">
+                <p className="text-sm text-gray-500">Notes</p>
+                <p className="text-sm">{car.reservation.notes}</p>
+              </div>
+            )}
+            
+            <div className="mt-4">
+              <button 
+                onClick={() => openUpdateReservationModal(car.reservation)}
+                className="px-3 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600"
+              >
+                Manage Reservation
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* Inspections */}
       {car.inspections && car.inspections.length > 0 && (
@@ -498,13 +555,25 @@ const CarView = () => {
               <DollarSign size={16} className="mr-2" />
               Record Sale
             </Link>
-            <Link to={`/reservations/new?carId=${car.id}`} className="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-yellow-700 flex items-center">
+            <button 
+              onClick={openNewReservationModal} 
+              className="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-yellow-700 flex items-center"
+            >
               <Calendar size={16} className="mr-2" />
               Create Reservation
-            </Link>
+            </button>
           </>
         )}
       </div>
+      
+      {/* Reservation Modal for Create/Update */}
+      <ReservationModal
+        isOpen={reservationModalOpen}
+        onClose={() => setReservationModalOpen(false)}
+        carId={car?.id}
+        existingReservation={selectedReservation}
+        onSuccess={handleReservationSuccess}
+      />
     </PageTemplate>
   );
 };
